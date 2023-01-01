@@ -426,184 +426,152 @@ extick:ticket0006 a ex:Ticket;
   ex:validFrom "2023-04-17T12:00:00"^^xsd:dateTime;
   ex:validTo "2023-04-17T22:00:00"^^xsd:dateTime .
 
-extrfcln:trafficline0001 <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-5.csv#id> 1;
+extrfcln:trafficline0001 a ex:TrafficLine;
   ex:trafficLineId 22 .
 
-extrfcln:trafficline0002 <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-5.csv#id> 2;
+extrfcln:trafficline0002 a ex:TrafficLine;
   ex:trafficLineId 15 .
 
-extrfcln:trafficline0003 <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-5.csv#id> 3;
+extrfcln:trafficline0003 a ex:TrafficLine;
   ex:trafficLineId 283 .
 
-extrfcln:trafficline0004 <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-5.csv#id> 4;
+extrfcln:trafficline0004 a ex:TrafficLine;
   ex:trafficLineId 80 .
 
-extrfcln:trafficline0005 <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-5.csv#id> 5;
+extrfcln:trafficline0005 a ex:TrafficLine;
   ex:trafficLineId 81 .
 
-extrfclnstn:trafficlinestation__0001 a ex:TrafficLineStation;
-  ex:minutesToNext 2;
+extrfclnstn:trafficlinestation_15_0001 a ex:TrafficLineStation;
+  ex:minutesToNext 3;
   ex:order 1 .
 
-extrfclnstn:trafficlinestation__00010 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_15_0002 a ex:TrafficLineStation;
+  ex:minutesToNext 2;
+  ex:order 2 .
+
+extrfclnstn:trafficlinestation_15_0003 a ex:TrafficLineStation;
+  ex:minutesToNext 4;
+  ex:order 3 .
+
+extrfclnstn:trafficlinestation_15_0004 a ex:TrafficLineStation;
+  ex:minutesToNext 1;
+  ex:order 4 .
+
+extrfclnstn:trafficlinestation_15_0005 a ex:TrafficLineStation;
+  ex:minutesToNext 1;
+  ex:order 5 .
+
+extrfclnstn:trafficlinestation_15_0006 a ex:TrafficLineStation;
+  ex:minutesToNext 3;
+  ex:order 6 .
+
+extrfclnstn:trafficlinestation_15_0007 a ex:TrafficLineStation;
+  ex:minutesToNext 2;
+  ex:order 7 .
+
+extrfclnstn:trafficlinestation_15_0008 a ex:TrafficLineStation;
+  ex:minutesToNext 4;
+  ex:order 8 .
+
+extrfclnstn:trafficlinestation_15_0009 a ex:TrafficLineStation;
+  ex:minutesToNext 0;
+  ex:order 9 .
+
+extrfclnstn:trafficlinestation_22_0009 a ex:TrafficLineStation;
+  ex:minutesToNext 1;
+  ex:order 9 .
+
+extrfclnstn:trafficlinestation_22_0010 a ex:TrafficLineStation;
   ex:minutesToNext 3;
   ex:order 10 .
 
-extrfclnstn:trafficlinestation__00011 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_22_0011 a ex:TrafficLineStation;
   ex:minutesToNext 2;
   ex:order 11 .
 
-extrfclnstn:trafficlinestation__00012 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_22_0012 a ex:TrafficLineStation;
   ex:minutesToNext 4;
   ex:order 12 .
 
-extrfclnstn:trafficlinestation__00013 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_22_0013 a ex:TrafficLineStation;
   ex:minutesToNext 3;
   ex:order 13 .
 
-extrfclnstn:trafficlinestation__00014 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_22_0014 a ex:TrafficLineStation;
   ex:minutesToNext 2;
   ex:order 14 .
 
-extrfclnstn:trafficlinestation__00015 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_22_0015 a ex:TrafficLineStation;
   ex:minutesToNext 1;
   ex:order 15 .
 
-extrfclnstn:trafficlinestation__00016 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_22_0016 a ex:TrafficLineStation;
   ex:minutesToNext 5;
   ex:order 16 .
 
-extrfclnstn:trafficlinestation__00017 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_22_0017 a ex:TrafficLineStation;
   ex:minutesToNext 3;
   ex:order 17 .
 
-extrfclnstn:trafficlinestation__00018 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_22_0018 a ex:TrafficLineStation;
   ex:minutesToNext 4;
   ex:order 18 .
 
-extrfclnstn:trafficlinestation__00019 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_22_0019 a ex:TrafficLineStation;
   ex:minutesToNext 1;
   ex:order 19 .
 
-extrfclnstn:trafficlinestation__0002 a ex:TrafficLineStation;
-  ex:minutesToNext 1;
-  ex:order 2 .
-
-extrfclnstn:trafficlinestation__00020 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_22_0020 a ex:TrafficLineStation;
   ex:minutesToNext 2;
   ex:order 20 .
 
-extrfclnstn:trafficlinestation__00021 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_22_0021 a ex:TrafficLineStation;
   ex:minutesToNext 3;
   ex:order 21 .
 
-extrfclnstn:trafficlinestation__00022 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_22_0022 a ex:TrafficLineStation;
   ex:minutesToNext 4;
   ex:order 22 .
 
-extrfclnstn:trafficlinestation__00023 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_22_0023 a ex:TrafficLineStation;
   ex:minutesToNext 5;
   ex:order 23 .
 
-extrfclnstn:trafficlinestation__00024 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_22_0024 a ex:TrafficLineStation;
   ex:minutesToNext 1;
   ex:order 24 .
 
-extrfclnstn:trafficlinestation__00025 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_22_0025 a ex:TrafficLineStation;
   ex:minutesToNext 2;
   ex:order 25 .
 
-extrfclnstn:trafficlinestation__00026 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_22_0026 a ex:TrafficLineStation;
   ex:minutesToNext 0;
   ex:order 26 .
 
-extrfclnstn:trafficlinestation__00027 a ex:TrafficLineStation;
-  ex:minutesToNext 3;
-  ex:order 1 .
-
-extrfclnstn:trafficlinestation__00028 a ex:TrafficLineStation;
-  ex:minutesToNext 2;
-  ex:order 2 .
-
-extrfclnstn:trafficlinestation__00029 a ex:TrafficLineStation;
-  ex:minutesToNext 4;
-  ex:order 3 .
-
-extrfclnstn:trafficlinestation__0003 a ex:TrafficLineStation;
-  ex:minutesToNext 2;
-  ex:order 3 .
-
-extrfclnstn:trafficlinestation__00030 a ex:TrafficLineStation;
-  ex:minutesToNext 1;
-  ex:order 4 .
-
-extrfclnstn:trafficlinestation__00031 a ex:TrafficLineStation;
-  ex:minutesToNext 1;
-  ex:order 5 .
-
-extrfclnstn:trafficlinestation__00032 a ex:TrafficLineStation;
-  ex:minutesToNext 3;
-  ex:order 6 .
-
-extrfclnstn:trafficlinestation__00033 a ex:TrafficLineStation;
-  ex:minutesToNext 2;
-  ex:order 7 .
-
-extrfclnstn:trafficlinestation__00034 a ex:TrafficLineStation;
-  ex:minutesToNext 4;
-  ex:order 8 .
-
-extrfclnstn:trafficlinestation__00035 a ex:TrafficLineStation;
-  ex:minutesToNext 0;
-  ex:order 9 .
-
-extrfclnstn:trafficlinestation__00036 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_80_0001 a ex:TrafficLineStation;
   ex:minutesToNext 1;
   ex:order 1 .
 
-extrfclnstn:trafficlinestation__00037 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_80_0002 a ex:TrafficLineStation;
   ex:minutesToNext 3;
   ex:order 2 .
 
-extrfclnstn:trafficlinestation__00038 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_80_0003 a ex:TrafficLineStation;
   ex:minutesToNext 0;
   ex:order 3 .
 
-extrfclnstn:trafficlinestation__00039 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_81_0001 a ex:TrafficLineStation;
   ex:minutesToNext 3;
   ex:order 1 .
 
-extrfclnstn:trafficlinestation__0004 a ex:TrafficLineStation;
-  ex:minutesToNext 3;
-  ex:order 4 .
-
-extrfclnstn:trafficlinestation__00040 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_81_0002 a ex:TrafficLineStation;
   ex:minutesToNext 1;
   ex:order 2 .
 
-extrfclnstn:trafficlinestation__00041 a ex:TrafficLineStation;
+extrfclnstn:trafficlinestation_81_0003 a ex:TrafficLineStation;
   ex:minutesToNext 0;
   ex:order 3 .
-
-extrfclnstn:trafficlinestation__0005 a ex:TrafficLineStation;
-  ex:minutesToNext 5;
-  ex:order 5 .
-
-extrfclnstn:trafficlinestation__0006 a ex:TrafficLineStation;
-  ex:minutesToNext 7;
-  ex:order 6 .
-
-extrfclnstn:trafficlinestation__0007 a ex:TrafficLineStation;
-  ex:minutesToNext 3;
-  ex:order 7 .
-
-extrfclnstn:trafficlinestation__0008 a ex:TrafficLineStation;
-  ex:minutesToNext 2;
-  ex:order 8 .
-
-extrfclnstn:trafficlinestation__0009 a ex:TrafficLineStation;
-  ex:minutesToNext 1;
-  ex:order 9 .
 
 extype:bus a extype:TransportType;
   <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-7.csv#type> "bus";

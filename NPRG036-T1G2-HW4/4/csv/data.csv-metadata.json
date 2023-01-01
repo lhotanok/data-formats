@@ -227,7 +227,9 @@
             "dc:description":"Unique ID of the traffic line",
             "required":true,
             "datatype":"integer",
-            "aboutUrl":"https://example.org/resource/trafficline/trafficline000{id}"
+            "aboutUrl":"https://example.org/resource/trafficline/trafficline000{id}",
+            "propertyUrl":"rdf:type",
+            "valueUrl":"https://example.org/vocabulary/TrafficLine"
           },
           {
             "@type":"Column",
@@ -255,15 +257,15 @@
             "titles":"id",
             "required":true,
             "dc:description":"ID for the traffic line station",
-            "aboutUrl":"https://example.org/resource/trafficlinestation/trafficlinestation_{trafficLineId}_000{id}",
+            "aboutUrl":"https://example.org/resource/trafficlinestation/trafficlinestation_{trafficLineId}_{idLeadingZeros}{order}",
             "propertyUrl":"rdf:type",
             "valueUrl":"https://example.org/vocabulary/TrafficLineStation"
           },
           {
             "@type":"Column",
-            "name":"traffId",
-            "titles":"traffId",
-            "dc:description":"ID of the traffic line this traffic line station belongs to",
+            "name":"trafficLineId",
+            "titles":"trafficLineId",
+            "dc:description":"Traffic Line ID of the traffic line this traffic line station belongs to",
             "required":true,
             "suppressOutput":true,
             "datatype":"integer"
@@ -284,7 +286,7 @@
             "dc:description":"Order of the traffic line station. Traffic line stations are ordered from number 1.",
             "required":true,
             "datatype":"integer",
-            "aboutUrl":"https://example.org/resource/trafficlinestation/trafficlinestation_{trafficLineId}_000{id}",
+            "aboutUrl":"https://example.org/resource/trafficlinestation/trafficlinestation_{trafficLineId}_{idLeadingZeros}{order}",
             "propertyUrl":"https://example.org/vocabulary/order"
           },
           {
@@ -294,17 +296,25 @@
             "dc:description":"Minutes to the next station. Each last station has to be 0 minutes from the next station.",
             "required":true,
             "datatype":"integer",
-            "aboutUrl":"https://example.org/resource/trafficlinestation/trafficlinestation_{trafficLineId}_000{id}",
+            "aboutUrl":"https://example.org/resource/trafficlinestation/trafficlinestation_{trafficLineId}_{idLeadingZeros}{order}",
             "propertyUrl":"https://example.org/vocabulary/minutesToNext"
+          },
+          {
+            "@type":"Column",
+            "name":"idLeadingZeros",
+            "titles":"idLeadingZeros",
+            "dc:description":"Leading zeros in Traffic Line Station IRI.",
+            "required":true,
+            "suppressOutput":true
           }
         ],
         "primaryKey":"id",
         "foreignKeys":[
           {
-            "columnReference":"traffId",
+            "columnReference":"trafficLineId",
             "reference":{
               "resource":"data-5.csv",
-              "columnReference":"id"
+              "columnReference":"trafficLineId"
             }
           },
           {
