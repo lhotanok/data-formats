@@ -57,6 +57,27 @@ https://www.freeformatter.com/xsl-transformer.html
 
 http://prefix.cc/
 
-### RDF  Tabular
+### RDF Tabular
 
 https://github.com/ruby-rdf/rdf-tabular
+
+## Commands
+
+### Generate RDF from CSV
+
+- depends on RDF Tabular CLI
+- used in HW4
+
+#### Windows
+```bash
+cd NPRG036-T1G2-HW4/4/csv
+
+rdf serialize --input-format tabular --output-format turtle --minimal --decode-uri --prefixes exdep:https://example.org/resource/departures/,extype:https://example.org/resource/transporttypes/,extrfclnstn:https://example.org/resource/trafficlinestation/,extrfcln:https://example.org/resource/trafficline/,exstation:https://example.org/resource/stations/,expas:https://example.org/resource/passengers/,xsd:https://www.w3.org/TR/xmlschema11-2/,extick:https://example.org/resource/tickets/,ex:https://example.org/vocabulary/ data.csv-metadata.json | Out-File -FilePath .\data.ttl -Encoding oem
+```
+
+#### Linux
+```bash
+cd NPRG036-T1G2-HW4/4/csv
+
+rdf serialize --input-format tabular --output-format turtle --minimal --decode-uri --prefixes exdep:https://example.org/resource/departures/,extype:https://example.org/resource/transporttypes/,extrfclnstn:https://example.org/resource/trafficlinestation/,extrfcln:https://example.org/resource/trafficline/,exstation:https://example.org/resource/stations/,expas:https://example.org/resource/passengers/,xsd:https://www.w3.org/TR/xmlschema11-2/,extick:https://example.org/resource/tickets/,ex:https://example.org/vocabulary/ data.csv-metadata.json > data.ttl
+```
