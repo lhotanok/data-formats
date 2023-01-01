@@ -1,0 +1,464 @@
+
+@prefix extrfcln: <https://example.org/resource/trafficline/> .
+@prefix ex: <https://example.org/vocabulary/> .
+@prefix extype: <https://example.org/resource/transporttypes/> .
+@prefix exdep: <https://example.org/resource/departures/> .
+@prefix extrfclnstn: <https://example.org/resource/trafficlinestation/> .
+@prefix exdep: <https://example.org/resource/departures/> .
+
+extype:bus a ex:TransportType ;
+    ex:transportTypeName "Bus"@en .
+
+extype:tram a ex:TransportType ;
+    ex:transportTypeName "Tram"@en .
+
+extype:metro a ex:TransportType ;
+    ex:transportTypeName "Metro"@en .
+
+extype:train a ex:TransportType ;
+    ex:transportTypeName "Train"@en .
+
+extype:ferry a ex:TransportType ;
+    ex:transportTypeName "Ferry"@en .
+
+extype:funicular a ex:TransportType ;
+    ex:transportTypeName "Funicular"@en .
+
+extrfcln:trafficline0001 a ex:TrafficLine ;
+    ex:trafficLineId 22 .
+
+extrfcln:trafficline0001 ex:trafficLineHasType extype:tram .
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0001 .
+extrfclnstn:trafficlinestation_22_0001 a ex:TrafficLineStation ;
+    ex:order 1 ;
+    ex:minutesToNext 2 ;
+    ex:trafficLineStationHasStation exstation:station0001 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0002 .
+extrfclnstn:trafficlinestation_22_0002 a ex:TrafficLineStation ;
+    ex:order 2 ;
+    ex:minutesToNext 1 ;
+    ex:trafficLineStationHasStation exstation:station0002 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0003 .
+extrfclnstn:trafficlinestation_22_0003 a ex:TrafficLineStation ;
+    ex:order 3 ;
+    ex:minutesToNext 2 ;
+    ex:trafficLineStationHasStation exstation:station0003 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0004 .
+extrfclnstn:trafficlinestation_22_0004 a ex:TrafficLineStation ;
+    ex:order 4 ;
+    ex:minutesToNext 3 ;
+    ex:trafficLineStationHasStation exstation:station0004 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0005 .
+extrfclnstn:trafficlinestation_22_0005 a ex:TrafficLineStation ;
+    ex:order 5 ;
+    ex:minutesToNext 5 ;
+    ex:trafficLineStationHasStation exstation:station0005 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0006 .
+extrfclnstn:trafficlinestation_22_0006 a ex:TrafficLineStation ;
+    ex:order 6 ;
+    ex:minutesToNext 7 ;
+    ex:trafficLineStationHasStation exstation:station0006 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0007 .
+extrfclnstn:trafficlinestation_22_0007 a ex:TrafficLineStation ;
+    ex:order 7 ;
+    ex:minutesToNext 3 ;
+    ex:trafficLineStationHasStation exstation:station0007 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0008 .
+extrfclnstn:trafficlinestation_22_0008 a ex:TrafficLineStation ;
+    ex:order 8 ;
+    ex:minutesToNext 2 ;
+    ex:trafficLineStationHasStation exstation:station0008 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0009 .
+extrfclnstn:trafficlinestation_22_0009 a ex:TrafficLineStation ;
+    ex:order 9 ;
+    ex:minutesToNext 1 ;
+    ex:trafficLineStationHasStation exstation:station0009 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0010 .
+extrfclnstn:trafficlinestation_22_0010 a ex:TrafficLineStation ;
+    ex:order 10 ;
+    ex:minutesToNext 3 ;
+    ex:trafficLineStationHasStation exstation:station0010 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0011 .
+extrfclnstn:trafficlinestation_22_0011 a ex:TrafficLineStation ;
+    ex:order 11 ;
+    ex:minutesToNext 2 ;
+    ex:trafficLineStationHasStation exstation:station0011 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0012 .
+extrfclnstn:trafficlinestation_22_0012 a ex:TrafficLineStation ;
+    ex:order 12 ;
+    ex:minutesToNext 4 ;
+    ex:trafficLineStationHasStation exstation:station0012 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0013 .
+extrfclnstn:trafficlinestation_22_0013 a ex:TrafficLineStation ;
+    ex:order 13 ;
+    ex:minutesToNext 3 ;
+    ex:trafficLineStationHasStation exstation:station0013 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0014 .
+extrfclnstn:trafficlinestation_22_0014 a ex:TrafficLineStation ;
+    ex:order 14 ;
+    ex:minutesToNext 2 ;
+    ex:trafficLineStationHasStation exstation:station0014 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0015 .
+extrfclnstn:trafficlinestation_22_0015 a ex:TrafficLineStation ;
+    ex:order 15 ;
+    ex:minutesToNext 1 ;
+    ex:trafficLineStationHasStation exstation:station0015 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0016 .
+extrfclnstn:trafficlinestation_22_0016 a ex:TrafficLineStation ;
+    ex:order 16 ;
+    ex:minutesToNext 5 ;
+    ex:trafficLineStationHasStation exstation:station0016 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0017 .
+extrfclnstn:trafficlinestation_22_0017 a ex:TrafficLineStation ;
+    ex:order 17 ;
+    ex:minutesToNext 3 ;
+    ex:trafficLineStationHasStation exstation:station0017 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0018 .
+extrfclnstn:trafficlinestation_22_0018 a ex:TrafficLineStation ;
+    ex:order 18 ;
+    ex:minutesToNext 4 ;
+    ex:trafficLineStationHasStation exstation:station0018 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0019 .
+extrfclnstn:trafficlinestation_22_0019 a ex:TrafficLineStation ;
+    ex:order 19 ;
+    ex:minutesToNext 1 ;
+    ex:trafficLineStationHasStation exstation:station0019 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0020 .
+extrfclnstn:trafficlinestation_22_0020 a ex:TrafficLineStation ;
+    ex:order 20 ;
+    ex:minutesToNext 2 ;
+    ex:trafficLineStationHasStation exstation:station0020 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0021 .
+extrfclnstn:trafficlinestation_22_0021 a ex:TrafficLineStation ;
+    ex:order 21 ;
+    ex:minutesToNext 3 ;
+    ex:trafficLineStationHasStation exstation:station0021 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0022 .
+extrfclnstn:trafficlinestation_22_0022 a ex:TrafficLineStation ;
+    ex:order 22 ;
+    ex:minutesToNext 4 ;
+    ex:trafficLineStationHasStation exstation:station0022 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0023 .
+extrfclnstn:trafficlinestation_22_0023 a ex:TrafficLineStation ;
+    ex:order 23 ;
+    ex:minutesToNext 5 ;
+    ex:trafficLineStationHasStation exstation:station0023 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0024 .
+extrfclnstn:trafficlinestation_22_0024 a ex:TrafficLineStation ;
+    ex:order 24 ;
+    ex:minutesToNext 1 ;
+    ex:trafficLineStationHasStation exstation:station0024 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0025 .
+extrfclnstn:trafficlinestation_22_0025 a ex:TrafficLineStation ;
+    ex:order 25 ;
+    ex:minutesToNext 2 ;
+    ex:trafficLineStationHasStation exstation:station0025 .
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0026 .
+extrfclnstn:trafficlinestation_22_0026 a ex:TrafficLineStation ;
+    ex:order 26 ;
+    ex:minutesToNext 0 ;
+    ex:trafficLineStationHasStation exstation:station0026 .
+
+extrfcln:trafficline0001 ex:follows exdep:depforline0001 .
+    exdep:depforline0001 a ex:Departures ;
+        ex:businessDay "05:30:00"^^xsd:time ;
+        ex:businessDay "06:30:00"^^xsd:time ;
+        ex:businessDay "07:30:00"^^xsd:time ;
+        ex:businessDay "08:30:00"^^xsd:time ;
+        ex:businessDay "09:30:00"^^xsd:time ;
+        ex:businessDay "10:30:00"^^xsd:time ;
+        ex:businessDay "11:30:00"^^xsd:time ;
+        ex:businessDay "12:30:00"^^xsd:time ;
+        ex:businessDay "13:30:00"^^xsd:time ;
+        ex:businessDay "14:30:00"^^xsd:time ;
+        ex:businessDay "15:30:00"^^xsd:time ;
+        ex:businessDay "16:30:00"^^xsd:time ;
+        ex:businessDay "17:30:00"^^xsd:time ;
+        ex:businessDay "18:30:00"^^xsd:time ;
+        ex:businessDay "19:30:00"^^xsd:time ;
+        ex:businessDay "20:30:00"^^xsd:time ;
+        ex:businessDay "21:30:00"^^xsd:time ;
+        ex:businessDay "22:30:00"^^xsd:time ;
+        ex:businessDay "23:30:00"^^xsd:time ;
+        ex:saturday "15:30:00"^^xsd:time ;
+        ex:saturday "17:30:00"^^xsd:time ;
+        ex:saturday "19:30:00"^^xsd:time ;
+        ex:saturday "21:30:00"^^xsd:time ;
+        ex:sunday "15:30:00"^^xsd:time ;
+        ex:sunday "18:30:00"^^xsd:time ;
+        ex:sunday "21:30:00"^^xsd:time ;
+        ex:holidays "2023-01-01"^^xsd:date ;
+        ex:holidays "2023-05-01"^^xsd:date ;
+        ex:holidays "2023-05-08"^^xsd:date ;
+        ex:holidays "2023-07-05"^^xsd:date ;
+        ex:holidays "2023-07-06"^^xsd:date ;
+        ex:holidays "2023-09-28"^^xsd:date ;
+        ex:holidays "2023-10-28"^^xsd:date ;
+        ex:holidays "2023-11-17"^^xsd:date ;
+        ex:holidays "2023-12-24"^^xsd:date ;
+        ex:holidays "2023-12-25"^^xsd:date ;
+        ex:holidays "2023-12-26"^^xsd:date .
+    extrfcln:trafficline0002 a ex:TrafficLine ;
+    ex:trafficLineId 15 .
+
+extrfcln:trafficline0002 ex:trafficLineHasType extype:tram .
+extrfcln:trafficline0002 ex:contains extrfclnstn:trafficlinestation_15_0001 .
+extrfclnstn:trafficlinestation_15_0001 a ex:TrafficLineStation ;
+    ex:order 1 ;
+    ex:minutesToNext 3 ;
+    ex:trafficLineStationHasStation exstation:station0027 .
+
+extrfcln:trafficline0002 ex:contains extrfclnstn:trafficlinestation_15_0002 .
+extrfclnstn:trafficlinestation_15_0002 a ex:TrafficLineStation ;
+    ex:order 2 ;
+    ex:minutesToNext 2 ;
+    ex:trafficLineStationHasStation exstation:station0028 .
+
+extrfcln:trafficline0002 ex:contains extrfclnstn:trafficlinestation_15_0003 .
+extrfclnstn:trafficlinestation_15_0003 a ex:TrafficLineStation ;
+    ex:order 3 ;
+    ex:minutesToNext 4 ;
+    ex:trafficLineStationHasStation exstation:station0028 .
+
+extrfcln:trafficline0002 ex:contains extrfclnstn:trafficlinestation_15_0004 .
+extrfclnstn:trafficlinestation_15_0004 a ex:TrafficLineStation ;
+    ex:order 4 ;
+    ex:minutesToNext 1 ;
+    ex:trafficLineStationHasStation exstation:station0029 .
+
+extrfcln:trafficline0002 ex:contains extrfclnstn:trafficlinestation_15_0005 .
+extrfclnstn:trafficlinestation_15_0005 a ex:TrafficLineStation ;
+    ex:order 5 ;
+    ex:minutesToNext 1 ;
+    ex:trafficLineStationHasStation exstation:station0009 .
+
+extrfcln:trafficline0002 ex:contains extrfclnstn:trafficlinestation_15_0006 .
+extrfclnstn:trafficlinestation_15_0006 a ex:TrafficLineStation ;
+    ex:order 6 ;
+    ex:minutesToNext 3 ;
+    ex:trafficLineStationHasStation exstation:station0010 .
+
+extrfcln:trafficline0002 ex:contains extrfclnstn:trafficlinestation_15_0007 .
+extrfclnstn:trafficlinestation_15_0007 a ex:TrafficLineStation ;
+    ex:order 7 ;
+    ex:minutesToNext 2 ;
+    ex:trafficLineStationHasStation exstation:station0011 .
+
+extrfcln:trafficline0002 ex:contains extrfclnstn:trafficlinestation_15_0008 .
+extrfclnstn:trafficlinestation_15_0008 a ex:TrafficLineStation ;
+    ex:order 8 ;
+    ex:minutesToNext 4 ;
+    ex:trafficLineStationHasStation exstation:station0012 .
+
+extrfcln:trafficline0002 ex:contains extrfclnstn:trafficlinestation_15_0009 .
+extrfclnstn:trafficlinestation_15_0009 a ex:TrafficLineStation ;
+    ex:order 9 ;
+    ex:minutesToNext 0 ;
+    ex:trafficLineStationHasStation exstation:station0030 .
+
+extrfcln:trafficline0002 ex:follows exdep:depforline0002 .
+    exdep:depforline0002 a ex:Departures ;
+        ex:businessDay "07:30:00"^^xsd:time ;
+        ex:businessDay "08:30:00"^^xsd:time ;
+        ex:businessDay "09:30:00"^^xsd:time ;
+        ex:businessDay "10:30:00"^^xsd:time ;
+        ex:businessDay "11:30:00"^^xsd:time ;
+        ex:businessDay "12:30:00"^^xsd:time ;
+        ex:businessDay "13:30:00"^^xsd:time ;
+        ex:businessDay "14:30:00"^^xsd:time ;
+        ex:businessDay "15:30:00"^^xsd:time ;
+        ex:businessDay "16:30:00"^^xsd:time ;
+        ex:businessDay "17:30:00"^^xsd:time ;
+        ex:businessDay "18:30:00"^^xsd:time ;
+        ex:businessDay "19:30:00"^^xsd:time ;
+        ex:businessDay "20:30:00"^^xsd:time ;
+        ex:businessDay "21:30:00"^^xsd:time ;
+        ex:businessDay "22:30:00"^^xsd:time ;
+        ex:businessDay "23:30:00"^^xsd:time ;
+        ex:saturday "09:30:00"^^xsd:time ;
+        ex:saturday "11:30:00"^^xsd:time ;
+        ex:saturday "13:30:00"^^xsd:time ;
+        ex:saturday "15:30:00"^^xsd:time ;
+        ex:sunday "09:00:00"^^xsd:time ;
+        ex:sunday "10:00:00"^^xsd:time ;
+        ex:sunday "11:00:00"^^xsd:time ;
+        ex:holidays "2023-01-01"^^xsd:date ;
+        ex:holidays "2023-05-08"^^xsd:date ;
+        ex:holidays "2023-09-28"^^xsd:date ;
+        ex:holidays "2023-10-28"^^xsd:date ;
+        ex:holidays "2023-11-17"^^xsd:date ;
+        ex:holidays "2023-12-24"^^xsd:date ;
+        ex:holidays "2023-12-25"^^xsd:date ;
+        ex:holidays "2023-12-26"^^xsd:date .
+    extrfcln:trafficline0003 a ex:TrafficLine ;
+    ex:trafficLineId 283 .
+
+extrfcln:trafficline0003 ex:trafficLineHasType extype:train .
+extrfcln:trafficline0003 ex:follows exdep:depforline0003 .
+    exdep:depforline0003 a ex:Departures ;
+        ex:businessDay "10:30:00"^^xsd:time ;
+        ex:businessDay "11:00:00"^^xsd:time ;
+        ex:businessDay "11:30:00"^^xsd:time ;
+        ex:businessDay "12:00:00"^^xsd:time ;
+        ex:businessDay "12:30:00"^^xsd:time ;
+        ex:saturday "12:30:00"^^xsd:time ;
+        ex:sunday "16:30:00"^^xsd:time ;
+        ex:holidays "2023-01-01"^^xsd:date ;
+        ex:holidays "2023-09-28"^^xsd:date ;
+        ex:holidays "2023-10-28"^^xsd:date ;
+        ex:holidays "2023-12-24"^^xsd:date ;
+        ex:holidays "2023-12-25"^^xsd:date ;
+        ex:holidays "2023-12-26"^^xsd:date .
+    extrfcln:trafficline0004 a ex:TrafficLine ;
+    ex:trafficLineId 80 .
+
+extrfcln:trafficline0004 ex:trafficLineHasType extype:funicular .
+extrfcln:trafficline0004 ex:contains extrfclnstn:trafficlinestation_80_0001 .
+extrfclnstn:trafficlinestation_80_0001 a ex:TrafficLineStation ;
+    ex:order 1 ;
+    ex:minutesToNext 1 ;
+    ex:trafficLineStationHasStation exstation:station0080 .
+
+extrfcln:trafficline0004 ex:contains extrfclnstn:trafficlinestation_80_0002 .
+extrfclnstn:trafficlinestation_80_0002 a ex:TrafficLineStation ;
+    ex:order 2 ;
+    ex:minutesToNext 3 ;
+    ex:trafficLineStationHasStation exstation:station0081 .
+
+extrfcln:trafficline0004 ex:contains extrfclnstn:trafficlinestation_80_0003 .
+extrfclnstn:trafficlinestation_80_0003 a ex:TrafficLineStation ;
+    ex:order 3 ;
+    ex:minutesToNext 0 ;
+    ex:trafficLineStationHasStation exstation:station0082 .
+
+extrfcln:trafficline0004 ex:follows exdep:depforline0004 .
+    exdep:depforline0004 a ex:Departures ;
+        ex:businessDay "09:00:00"^^xsd:time ;
+        ex:businessDay "09:30:00"^^xsd:time ;
+        ex:businessDay "10:00:00"^^xsd:time ;
+        ex:businessDay "10:30:00"^^xsd:time ;
+        ex:businessDay "11:00:00"^^xsd:time ;
+        ex:businessDay "12:00:00"^^xsd:time ;
+        ex:businessDay "12:30:00"^^xsd:time ;
+        ex:businessDay "13:00:00"^^xsd:time ;
+        ex:businessDay "13:30:00"^^xsd:time ;
+        ex:businessDay "14:00:00"^^xsd:time ;
+        ex:businessDay "14:30:00"^^xsd:time ;
+        ex:businessDay "15:00:00"^^xsd:time ;
+        ex:businessDay "15:30:00"^^xsd:time ;
+        ex:businessDay "16:00:00"^^xsd:time ;
+        ex:businessDay "16:30:00"^^xsd:time ;
+        ex:businessDay "17:30:00"^^xsd:time ;
+        ex:businessDay "18:30:00"^^xsd:time ;
+        ex:businessDay "19:30:00"^^xsd:time ;
+        ex:businessDay "20:30:00"^^xsd:time ;
+        ex:businessDay "21:00:00"^^xsd:time ;
+        ex:businessDay "21:30:00"^^xsd:time ;
+        ex:businessDay "22:00:00"^^xsd:time ;
+        ex:saturday "15:30:00"^^xsd:time ;
+        ex:saturday "21:00:00"^^xsd:time ;
+        ex:saturday "21:30:00"^^xsd:time ;
+        ex:saturday "22:30:00"^^xsd:time ;
+        ex:sunday "09:00:00"^^xsd:time ;
+        ex:sunday "10:00:00"^^xsd:time ;
+        ex:sunday "11:00:00"^^xsd:time ;
+        ex:holidays "2023-01-01"^^xsd:date ;
+        ex:holidays "2023-05-01"^^xsd:date ;
+        ex:holidays "2023-05-08"^^xsd:date ;
+        ex:holidays "2023-07-05"^^xsd:date ;
+        ex:holidays "2023-07-06"^^xsd:date ;
+        ex:holidays "2023-09-28"^^xsd:date ;
+        ex:holidays "2023-10-28"^^xsd:date ;
+        ex:holidays "2023-11-17"^^xsd:date ;
+        ex:holidays "2023-12-24"^^xsd:date ;
+        ex:holidays "2023-12-25"^^xsd:date ;
+        ex:holidays "2023-12-26"^^xsd:date .
+    extrfcln:trafficline0005 a ex:TrafficLine ;
+    ex:trafficLineId 81 .
+
+extrfcln:trafficline0005 ex:trafficLineHasType extype:funicular .
+extrfcln:trafficline0005 ex:contains extrfclnstn:trafficlinestation_81_0001 .
+extrfclnstn:trafficlinestation_81_0001 a ex:TrafficLineStation ;
+    ex:order 1 ;
+    ex:minutesToNext 3 ;
+    ex:trafficLineStationHasStation exstation:station0082 .
+
+extrfcln:trafficline0005 ex:contains extrfclnstn:trafficlinestation_81_0002 .
+extrfclnstn:trafficlinestation_81_0002 a ex:TrafficLineStation ;
+    ex:order 2 ;
+    ex:minutesToNext 1 ;
+    ex:trafficLineStationHasStation exstation:station0081 .
+
+extrfcln:trafficline0005 ex:contains extrfclnstn:trafficlinestation_81_0003 .
+extrfclnstn:trafficlinestation_81_0003 a ex:TrafficLineStation ;
+    ex:order 3 ;
+    ex:minutesToNext 0 ;
+    ex:trafficLineStationHasStation exstation:station0080 .
+
+extrfcln:trafficline0005 ex:follows exdep:depforline0005 .
+    exdep:depforline0005 a ex:Departures ;
+        ex:businessDay "09:00:00"^^xsd:time ;
+        ex:businessDay "09:30:00"^^xsd:time ;
+        ex:businessDay "10:00:00"^^xsd:time ;
+        ex:businessDay "10:30:00"^^xsd:time ;
+        ex:businessDay "11:00:00"^^xsd:time ;
+        ex:businessDay "12:00:00"^^xsd:time ;
+        ex:businessDay "12:30:00"^^xsd:time ;
+        ex:businessDay "13:00:00"^^xsd:time ;
+        ex:businessDay "13:30:00"^^xsd:time ;
+        ex:businessDay "14:00:00"^^xsd:time ;
+        ex:businessDay "14:30:00"^^xsd:time ;
+        ex:businessDay "15:00:00"^^xsd:time ;
+        ex:businessDay "15:30:00"^^xsd:time ;
+        ex:businessDay "16:00:00"^^xsd:time ;
+        ex:businessDay "16:30:00"^^xsd:time ;
+        ex:businessDay "17:30:00"^^xsd:time ;
+        ex:businessDay "18:30:00"^^xsd:time ;
+        ex:businessDay "19:30:00"^^xsd:time ;
+        ex:businessDay "20:30:00"^^xsd:time ;
+        ex:businessDay "21:00:00"^^xsd:time ;
+        ex:businessDay "21:30:00"^^xsd:time ;
+        ex:businessDay "22:00:00"^^xsd:time ;
+        ex:saturday "15:30:00"^^xsd:time ;
+        ex:saturday "21:00:00"^^xsd:time ;
+        ex:saturday "21:30:00"^^xsd:time ;
+        ex:saturday "22:30:00"^^xsd:time ;
+        ex:sunday "09:00:00"^^xsd:time ;
+        ex:sunday "10:00:00"^^xsd:time ;
+        ex:sunday "11:00:00"^^xsd:time ;
+        ex:holidays "2023-01-01"^^xsd:date ;
+        ex:holidays "2023-05-01"^^xsd:date ;
+        ex:holidays "2023-05-08"^^xsd:date ;
+        ex:holidays "2023-07-05"^^xsd:date ;
+        ex:holidays "2023-07-06"^^xsd:date ;
+        ex:holidays "2023-09-28"^^xsd:date ;
+        ex:holidays "2023-10-28"^^xsd:date ;
+        ex:holidays "2023-11-17"^^xsd:date ;
+        ex:holidays "2023-12-24"^^xsd:date ;
+        ex:holidays "2023-12-25"^^xsd:date ;
+        ex:holidays "2023-12-26"^^xsd:date .

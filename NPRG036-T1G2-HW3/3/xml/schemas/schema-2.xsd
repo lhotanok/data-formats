@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:import namespace="http://www.w3.org/XML/1998/namespace"
+schemaLocation="https://www.w3.org/2009/01/xml.xsd" />
+     <!-- Enumaration of possible names for TrasportType-->
+     <xs:simpleType name="transportName">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Metro"/>
+            <xs:enumeration value="Bus"/>
+            <xs:enumeration value="Tram"/>
+            <xs:enumeration value="Ferry"/>
+            <xs:enumeration value="Train"/>
+            <xs:enumeration value="Funicular"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- TransportType definition-->
+    <xs:complexType name="TransportType">
+        <xs:sequence>
+            <xs:element name="name" type="transportName"/>
+        </xs:sequence>
+        <xs:attribute ref="xml:lang"/>
+    </xs:complexType>
+    <!-- Station definition-->
+    <xs:complexType name="Station">
+        <xs:sequence>
+            <xs:element name="stationId" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="latitude" type="xs:float" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="longitude" type="xs:float" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="transportType" type="TransportType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute ref="xml:lang"/>
+    </xs:complexType>
+    <!--ROOT-->
+    <xs:element name="Stations">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Station" type="Station" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

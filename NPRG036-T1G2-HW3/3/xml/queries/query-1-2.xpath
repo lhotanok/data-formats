@@ -1,0 +1,6 @@
+(: Which passengers own tickets from station with id 2 to station with id 4? :)
+
+/Passengers/Passenger
+[some $id in owns/destinationTickets/DestinationTicket/fromStationId satisfies $id = "2"]
+[some $id in owns/destinationTickets/DestinationTicket/toStationId satisfies $id = "4"]
+/(concat(firstName, " ", surname))

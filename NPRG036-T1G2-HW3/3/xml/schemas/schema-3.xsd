@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:import namespace="http://www.w3.org/XML/1998/namespace"
+schemaLocation="https://www.w3.org/2009/01/xml.xsd" />
+    <!-- Enumaration of possible names for TrasportType-->
+    <xs:simpleType name="transportName">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Metro"/>
+            <xs:enumeration value="Bus"/>
+            <xs:enumeration value="Tram"/>
+            <xs:enumeration value="Ferry"/>
+            <xs:enumeration value="Train"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- TransportType definition-->
+    <xs:complexType name="TransportType">
+        <xs:sequence>
+            <xs:element name="name" type="transportName"/>
+        </xs:sequence>
+    </xs:complexType>
+     <!--ListOfTimes definition-->
+     <xs:simpleType name="ListOfTimes">
+        <xs:list itemType="xs:time"/>
+    </xs:simpleType>
+    <!--ListOfTimes definition-->
+    <xs:simpleType name="ListOfDates">
+        <xs:list itemType="xs:date"/>
+    </xs:simpleType>
+    <!--Departures definition-->
+    <xs:complexType name="Departures">
+        <xs:sequence>
+            <xs:element name="businessDay" type="ListOfTimes" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="saturday" type="ListOfTimes" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="sunday" type="ListOfTimes" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="holidays" type="ListOfDates" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!--TrafficLineStation definition-->
+    <xs:complexType name="TrafficLineStation">
+        <xs:sequence>
+            <xs:element name="order" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="minutesToNext" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="hasStationId" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!--TrafficLineStations definition-->
+    <xs:complexType name="TrafficLineStations">
+        <xs:sequence>
+            <xs:element name="TrafficLineStation" type="TrafficLineStation" minOccurs="2" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <!--TrafficLine definition-->
+    <xs:complexType name="TrafficLine">
+        <xs:sequence>
+            <xs:element name="trafficLineId" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="transportType" type="TransportType" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="contains" type="TrafficLineStations" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="Departures" type="Departures" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!--ROOT-->
+    <xs:element name="TrafficLines">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="TrafficLine" type="TrafficLine" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

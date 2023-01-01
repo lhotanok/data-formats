@@ -1,0 +1,294 @@
+
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/vocabulary/> .
+@prefix exstation: <https://example.org/resource/stations/> .
+@prefix extype: <https://example.org/resource/transporttypes/> .
+
+extype:bus a ex:TransportType ;
+    ex:transportTypeName "Bus"@en .
+
+extype:tram a ex:TransportType ;
+    ex:transportTypeName "Tram"@en .
+
+extype:metro a ex:TransportType ;
+    ex:transportTypeName "Metro"@en .
+
+extype:train a ex:TransportType ;
+    ex:transportTypeName "Train"@en .
+
+extype:ferry a ex:TransportType ;
+    ex:transportTypeName "Ferry"@en .
+
+extype:funicular a ex:TransportType ;
+    ex:transportTypeName "Funicular"@en .
+
+exstation:station0001 a ex:Station ;
+    ex:stationName "Bílá Labuť"@cs ;
+    geo:lat 50.090168 ;
+    geo:long 14.43547 .
+
+exstation:station0001 ex:stationHasType extype:tram .
+exstation:station0002 a ex:Station ;
+    ex:stationName "Masarykovo Nádraží"@cs ;
+    geo:lat 50.081158 ;
+    geo:long 14.4195921 .
+
+exstation:station0002 ex:stationHasType extype:tram .
+exstation:station0002 ex:stationHasType extype:bus .
+exstation:station0003 a ex:Station ;
+    ex:stationName "Jindřišská"@cs ;
+    geo:lat 50.081158 ;
+    geo:long 14.4195921 .
+
+exstation:station0003 ex:stationHasType extype:tram .
+exstation:station0004 a ex:Station ;
+    ex:stationName "Václavské náměstí"@cs ;
+    geo:lat 50.081158 ;
+    geo:long 14.4195921 .
+
+exstation:station0004 ex:stationHasType extype:tram .
+exstation:station0005 a ex:Station ;
+    ex:stationName "Vodičkova"@cs ;
+    geo:lat 50.081158 ;
+    geo:long 14.4195921 .
+
+exstation:station0005 ex:stationHasType extype:tram .
+exstation:station0006 a ex:Station ;
+    ex:stationName "Lazarská"@cs ;
+    geo:lat 50.081158 ;
+    geo:long 14.4195921 .
+
+exstation:station0006 ex:stationHasType extype:tram .
+exstation:station0007 a ex:Station ;
+    ex:stationName "Národní Třída"@cs ;
+    geo:lat 50.081158 ;
+    geo:long 14.4195921 .
+
+exstation:station0007 ex:stationHasType extype:tram .
+exstation:station0008 a ex:Station ;
+    ex:stationName "Národní Divadlo"@cs ;
+    geo:lat 50.0824531 ;
+    geo:long 14.4131844 .
+
+exstation:station0008 ex:stationHasType extype:tram .
+exstation:station0009 a ex:Station ;
+    ex:stationName "Újezd"@cs ;
+    geo:lat 50.081676 ;
+    geo:long 14.404443 .
+
+exstation:station0009 ex:stationHasType extype:tram .
+exstation:station0010 a ex:Station ;
+    ex:stationName "Hellichova"@cs ;
+    geo:lat 50.085659 ;
+    geo:long 14.404176 .
+
+exstation:station0010 ex:stationHasType extype:tram .
+exstation:station0011 a ex:Station ;
+    ex:stationName "Malostranské Náměstí"@cs ;
+    geo:lat 50.08798 ;
+    geo:long 14.40433 .
+
+exstation:station0011 ex:stationHasType extype:tram .
+exstation:station0011 ex:stationHasType extype:bus .
+exstation:station0012 a ex:Station ;
+    ex:stationName "Malostranská"@cs ;
+    geo:lat 50.090363 ;
+    geo:long 14.410101 .
+
+exstation:station0012 ex:stationHasType extype:tram .
+exstation:station0013 a ex:Station ;
+    ex:stationName "Královský Letohrádek"@cs ;
+    geo:lat 50.094265 ;
+    geo:long 14.404549 .
+
+exstation:station0013 ex:stationHasType extype:tram .
+exstation:station0014 a ex:Station ;
+    ex:stationName "Pražský Hrad"@cs ;
+    geo:lat 50.093323 ;
+    geo:long 14.398007 .
+
+exstation:station0014 ex:stationHasType extype:tram .
+exstation:station0015 a ex:Station ;
+    ex:stationName "Brusnice"@cs ;
+    geo:lat 50.093323 ;
+    geo:long 14.398007 .
+
+exstation:station0015 ex:stationHasType extype:tram .
+exstation:station0016 a ex:Station ;
+    ex:stationName "Pohořelec"@cs ;
+    geo:lat 50.093323 ;
+    geo:long 14.398007 .
+
+exstation:station0016 ex:stationHasType extype:tram .
+exstation:station0017 a ex:Station ;
+    ex:stationName "Malovanka"@cs ;
+    geo:lat 50.093323 ;
+    geo:long 14.398007 .
+
+exstation:station0017 ex:stationHasType extype:tram .
+exstation:station0017 ex:stationHasType extype:bus .
+exstation:station0018 a ex:Station ;
+    ex:stationName "Marjánka"@cs ;
+    geo:lat 50.093323 ;
+    geo:long 14.398007 .
+
+exstation:station0018 ex:stationHasType extype:tram .
+exstation:station0018 ex:stationHasType extype:bus .
+exstation:station0019 a ex:Station ;
+    ex:stationName "Drinopol"@cs ;
+    geo:lat 50.093323 ;
+    geo:long 14.398007 .
+
+exstation:station0019 ex:stationHasType extype:tram .
+exstation:station0020 a ex:Station ;
+    ex:stationName "U Kaštanu"@cs ;
+    geo:lat 50.08363 ;
+    geo:long 14.36335 .
+
+exstation:station0020 ex:stationHasType extype:tram .
+exstation:station0021 a ex:Station ;
+    ex:stationName "Břevnovský Klášter"@cs ;
+    geo:lat 50.093323 ;
+    geo:long 14.398007 .
+
+exstation:station0021 ex:stationHasType extype:tram .
+exstation:station0022 a ex:Station ;
+    ex:stationName "Říčanova"@cs ;
+    geo:lat 50.08133 ;
+    geo:long 14.35277 .
+
+exstation:station0022 ex:stationHasType extype:tram .
+exstation:station0023 a ex:Station ;
+    ex:stationName "Vypich"@cs ;
+    geo:lat 50.0796863 ;
+    geo:long 14.3464722 .
+
+exstation:station0023 ex:stationHasType extype:tram .
+exstation:station0023 ex:stationHasType extype:bus .
+exstation:station0024 a ex:Station ;
+    ex:stationName "Obora Hvězda"@cs ;
+    geo:lat 50.078121 ;
+    geo:long 14.340657 .
+
+exstation:station0024 ex:stationHasType extype:tram .
+exstation:station0025 a ex:Station ;
+    ex:stationName "Malý Břevnov"@cs ;
+    geo:lat 50.076279 ;
+    geo:long 14.332569 .
+
+exstation:station0025 ex:stationHasType extype:tram .
+exstation:station0026 a ex:Station ;
+    ex:stationName "Bílá Hora"@cs ;
+    geo:lat 50.07555 ;
+    geo:long 14.32279 .
+
+exstation:station0026 ex:stationHasType extype:tram .
+exstation:station0027 a ex:Station ;
+    ex:stationName "Anděl"@cs ;
+    geo:lat 50.07193 ;
+    geo:long 14.4036309 .
+
+exstation:station0027 ex:stationHasType extype:tram .
+exstation:station0028 a ex:Station ;
+    ex:stationName "Arbesovo náměstí"@cs ;
+    geo:lat 50.0762107 ;
+    geo:long 14.4041746 .
+
+exstation:station0028 ex:stationHasType extype:tram .
+exstation:station0029 a ex:Station ;
+    ex:stationName "Švandovo divadlo"@cs ;
+    geo:lat 50.0762107 ;
+    geo:long 14.4041746 .
+
+exstation:station0029 ex:stationHasType extype:tram .
+exstation:station0030 a ex:Station ;
+    ex:stationName "Čechův most"@cs ;
+    geo:lat 50.0940657 ;
+    geo:long 14.4167362 .
+
+exstation:station0030 ex:stationHasType extype:tram .
+exstation:station0080 a ex:Station ;
+    ex:stationName "Petřín"@cs ;
+    geo:lat 50.0819497 ;
+    geo:long 14.3966883 .
+
+exstation:station0080 ex:stationHasType extype:funicular .
+exstation:station0081 a ex:Station ;
+    ex:stationName "Nebozízek"@cs ;
+    geo:lat 50.08226 ;
+    geo:long 14.39926 .
+
+exstation:station0081 ex:stationHasType extype:funicular .
+exstation:station0082 a ex:Station ;
+    ex:stationName "Újezd"@cs ;
+    geo:lat 50.082649 ;
+    geo:long 14.403681 .
+
+exstation:station0082 ex:stationHasType extype:funicular .
+exstation:station0100 a ex:Station ;
+    ex:stationName "Praha hl.n."@cs ;
+    geo:lat 50.0832088 ;
+    geo:long 14.4353059 .
+
+exstation:station0100 ex:stationHasType extype:train .
+exstation:station0101 a ex:Station ;
+    ex:stationName "Kolín"@cs ;
+    geo:lat 50.0251424 ;
+    geo:long 15.2135959 .
+
+exstation:station0101 ex:stationHasType extype:train .
+exstation:station0102 a ex:Station ;
+    ex:stationName "Brno-Královo Pole"@cs ;
+    geo:lat 49.2306224 ;
+    geo:long 16.5961361 .
+
+exstation:station0102 ex:stationHasType extype:train .
+exstation:station0103 a ex:Station ;
+    ex:stationName "Brno hl.n."@cs ;
+    geo:lat 49.1908371 ;
+    geo:long 16.6126478 .
+
+exstation:station0103 ex:stationHasType extype:train .
+exstation:station0104 a ex:Station ;
+    ex:stationName "Břeclav"@cs ;
+    geo:lat 48.7536757 ;
+    geo:long 16.8924738 .
+
+exstation:station0104 ex:stationHasType extype:train .
+exstation:station0105 a ex:Station ;
+    ex:stationName "Kúty"@cs ;
+    geo:lat 48.6621208 ;
+    geo:long 17.0471992 .
+
+exstation:station0105 ex:stationHasType extype:train .
+exstation:station0106 a ex:Station ;
+    ex:stationName "Bratislava hl.st."@cs ;
+    geo:lat 48.1586132 ;
+    geo:long 17.1060975 .
+
+exstation:station0106 ex:stationHasType extype:train .
+exstation:station0107 a ex:Station ;
+    ex:stationName "Bratislava-Vinohrady"@cs ;
+    geo:lat 48.1868475 ;
+    geo:long 17.1338485 .
+
+exstation:station0107 ex:stationHasType extype:train .
+exstation:station0108 a ex:Station ;
+    ex:stationName "Galanta"@cs ;
+    geo:lat 48.185312 ;
+    geo:long 17.7229379 .
+
+exstation:station0108 ex:stationHasType extype:train .
+exstation:station0109 a ex:Station ;
+    ex:stationName "Šaľa"@cs ;
+    geo:lat 48.1513924 ;
+    geo:long 17.8756083 .
+
+exstation:station0109 ex:stationHasType extype:train .
+exstation:station0110 a ex:Station ;
+    ex:stationName "Nové zámky"@cs ;
+    geo:lat 47.9945714 ;
+    geo:long 18.1740287 .
+
+exstation:station0110 ex:stationHasType extype:train .

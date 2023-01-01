@@ -1,0 +1,154 @@
+{
+  "@context":{
+    "type":"@type",
+    "foaf":"http://xmlns.com/foaf/0.1/",
+    "xsd":"http://www.w3.org/2001/XMLSchema#",
+    "ex":"http://example.org/vocabulary/",
+    "expas":"https://example.org/resource/passengers/",
+    "exstation":"https://example.org/resource/stations/",
+    "extick":"https://example.org/resource/tickets/",
+    "Passenger":"ex:Passenger",
+    "Station": "ex:Station",
+    "TimeTicket":"ex:TimeTicket",
+    "DestinationTicket":"ex:DestinationTicket",
+    "firstName":{
+      "@id":"foaf:givenName",
+      "@container":"@language"
+    },
+    "surname":{
+      "@id":"foaf:familyName",
+      "@container":"@language"
+    },
+    "ticketId":{
+      "@id":"ex:ticketId",
+      "@type":"xsd:integer"
+    },
+    "validFrom":{
+      "@id":"ex:validFrom",
+      "@type":"xsd:dateTime"
+    },
+    "validTo":{
+      "@id":"ex:validTo",
+      "@type":"xsd:dateTime"
+    },
+    "fromStation":{
+      "@id": "ex:from",
+      "@type": "Station"
+    },
+    "toStation":{
+      "@id": "ex:to",
+      "@type": "Station"
+    },
+    "owns": "ex:owns"
+  },
+  "@graph":[
+    {
+      "@id":"expas:expas0001",
+      "type":"Passenger",
+      "firstName":{
+        "cs":"Milan"
+      },
+      "surname":{
+        "cs":"Hrušovský"
+      },
+      "owns":[
+        {
+          "@id":"extick:ticket0001",
+          "type":"DestinationTicket",
+          "ticketId":1,
+          "validFrom":"2023-04-17T17:00:00",
+          "validTo":"2023-04-17T23:59:59",
+          "fromStation":{
+            "@id": "exstation:station0100"
+          },
+          "toStation": {
+            "@id": "exstation:station0103"
+          }
+        }
+      ]
+    },
+    {
+      "@id":"expas:expas0002",
+      "type":"Passenger",
+      "firstName":{
+        "en":"Frodo"
+      },
+      "surname":{
+        "en":"Bublik"
+      },
+      "owns":[
+        {
+          "@id":"extick:ticket0002",
+          "type":"TimeTicket",
+          "ticketId":2,
+          "validFrom":"2023-01-25T17:00:00",
+          "validTo":"2023-01-25T20:00:00"
+        }
+      ]
+    },
+    {
+      "@id":"expas:expas0003",
+      "type":"Passenger",
+      "firstName":{
+        "en":"Darth"
+      },
+      "surname":{
+        "en":"Vader"
+      },
+      "owns":[
+        {
+          "@id":"extick:ticket0003",
+          "type":"TimeTicket",
+          "ticketId":3,
+          "validFrom":"2022-12-04T23:30:00",
+          "validTo":"2022-12-05T00:30:00"
+        },
+        {
+          "@id":"extick:ticket0005",
+          "type":"DestinationTicket",
+          "ticketId":5,
+          "validFrom":"2023-04-20T09:00:00",
+          "validTo":"2023-04-20T20:00:00",
+          "fromStation":{
+            "@id": "exstation:station0100"
+          },
+          "toStation": {
+            "@id": "exstation:station0103"
+          }
+        }
+      ]
+    },
+    {
+      "@id":"expas:expas0004",
+      "type":"Passenger",
+      "firstName":{
+        "en":"Luke"
+      },
+      "surname":{
+        "en":"Skywalker"
+      },
+      "owns":[
+        {
+          "@id":"extick:ticket0004",
+          "type":"TimeTicket",
+          "ticketId":4,
+          "validFrom":"2022-12-24T17:00:00",
+          "validTo":"2022-12-24T18:00:00"
+        },
+        {
+          "@id":"extick:ticket0006",
+          "type":"DestinationTicket",
+          "ticketId":6,
+          "validFrom":"2023-04-17T12:00:00",
+          "validTo":"2023-04-17T22:00:00",
+          "fromStation":{
+            "@id": "exstation:station0104"
+          },
+          "toStation": {
+            "@id": "exstation:station0103"
+          }
+        }
+      ]
+    }
+  ]
+}

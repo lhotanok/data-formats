@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Stations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="../schemas/schema-2.xsd">
+    <Station xml:lang="cs">
+        <stationId>1</stationId>
+        <name>Bílá Labuť</name>
+        <latitude>50.090168</latitude>
+        <longitude>14.43547</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>2</stationId>
+        <name>Masarykovo Nádraží</name>
+        <latitude>50.081158</latitude>
+        <longitude>14.4195921</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+        <transportType>
+            <name>Bus</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>3</stationId>
+        <name>Jindřišská</name>
+        <latitude>50.081158</latitude>
+        <longitude>14.4195921</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>4</stationId>
+        <name>Václavské náměstí</name>
+        <latitude>50.081158</latitude>
+        <longitude>14.4195921</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>5</stationId>
+        <name>Vodičkova</name>
+        <latitude>50.081158</latitude>
+        <longitude>14.4195921</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>6</stationId>
+        <name>Lazarská</name>
+        <latitude>50.081158</latitude>
+        <longitude>14.4195921</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>7</stationId>
+        <name>Národní Třída</name>
+        <latitude>50.081158</latitude>
+        <longitude>14.4195921</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>8</stationId>
+        <name>Národní Divadlo</name>
+        <latitude>50.0824531</latitude>
+        <longitude>14.4131844</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>9</stationId>
+        <name>Újezd</name>
+        <latitude>50.081676</latitude>
+        <longitude>14.404443</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>10</stationId>
+        <name>Hellichova</name>
+        <latitude>50.085659</latitude>
+        <longitude>14.404176</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>11</stationId>
+        <name>Malostranské Náměstí</name>
+        <latitude>50.08798</latitude>
+        <longitude>14.40433</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+        <transportType>
+            <name>Bus</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>12</stationId>
+        <name>Malostranská</name>
+        <latitude>50.090363</latitude>
+        <longitude>14.410101</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>13</stationId>
+        <name>Královský Letohrádek</name>
+        <latitude>50.094265</latitude>
+        <longitude>14.404549</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>14</stationId>
+        <name>Pražský Hrad</name>
+        <latitude>50.093323</latitude>
+        <longitude>14.398007</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>15</stationId>
+        <name>Brusnice</name>
+        <latitude>50.093323</latitude>
+        <longitude>14.398007</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>16</stationId>
+        <name>Pohořelec</name>
+        <latitude>50.093323</latitude>
+        <longitude>14.398007</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>17</stationId>
+        <name>Malovanka</name>
+        <latitude>50.093323</latitude>
+        <longitude>14.398007</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+        <transportType>
+            <name>Bus</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>18</stationId>
+        <name>Marjánka</name>
+        <latitude>50.093323</latitude>
+        <longitude>14.398007</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+        <transportType>
+            <name>Bus</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>19</stationId>
+        <name>Drinopol</name>
+        <latitude>50.093323</latitude>
+        <longitude>14.398007</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>20</stationId>
+        <name>U Kaštanu</name>
+        <latitude>50.08363</latitude>
+        <longitude>14.36335</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>21</stationId>
+        <name>Břevnovský Klášter</name>
+        <latitude>50.093323</latitude>
+        <longitude>14.398007</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>22</stationId>
+        <name>Říčanova</name>
+        <latitude>50.08133</latitude>
+        <longitude>14.35277</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>23</stationId>
+        <name>Vypich</name>
+        <latitude>50.0796863</latitude>
+        <longitude>14.3464722</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+        <transportType>
+            <name>Bus</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>24</stationId>
+        <name>Obora Hvězda</name>
+        <latitude>50.078121</latitude>
+        <longitude>14.340657</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+
+    <Station xml:lang="cs">
+        <stationId>25</stationId>
+        <name>Malý Břevnov</name>
+        <latitude>50.076279</latitude>
+        <longitude>14.332569</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>26</stationId>
+        <name>Bílá Hora</name>
+        <latitude>50.07555</latitude>
+        <longitude>14.32279</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>27</stationId>
+        <name>Anděl</name>
+        <latitude>50.07193</latitude>
+        <longitude>14.4036309</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>28</stationId>
+        <name>Arbesovo náměstí</name>
+        <latitude>50.0762107</latitude>
+        <longitude>14.4041746</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>29</stationId>
+        <name>Švandovo divadlo</name>
+        <latitude>50.0762107</latitude>
+        <longitude>14.4041746</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>30</stationId>
+        <name>Čechův most</name>
+        <latitude>50.0940657</latitude>
+        <longitude>14.4167362</longitude>
+        <transportType>
+            <name>Tram</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>80</stationId>
+        <name>Petřín</name>
+        <latitude>50.0819497</latitude>
+        <longitude>14.3966883</longitude>
+        <transportType>
+            <name>Funicular</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>81</stationId>
+        <name>Nebozízek</name>
+        <latitude>50.08226</latitude>
+        <longitude>14.39926</longitude>
+        <transportType>
+            <name>Funicular</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>82</stationId>
+        <name>Újezd</name>
+        <latitude>50.082649</latitude>
+        <longitude>14.403681</longitude>
+        <transportType>
+            <name>Funicular</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>100</stationId>
+        <name>Praha hl.n.</name>
+        <latitude>50.0832088</latitude>
+        <longitude>14.4353059</longitude>
+        <transportType>
+            <name>Train</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>101</stationId>
+        <name>Kolín</name>
+        <latitude>50.0251424</latitude>
+        <longitude>15.2135959</longitude>
+        <transportType>
+            <name>Train</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>102</stationId>
+        <name>Brno-Královo Pole</name>
+        <latitude>49.2306224</latitude>
+        <longitude>16.5961361</longitude>
+        <transportType>
+            <name>Train</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>103</stationId>
+        <name>Brno hl.n.</name>
+        <latitude>49.1908371</latitude>
+        <longitude>16.6126478</longitude>
+        <transportType>
+            <name>Train</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>104</stationId>
+        <name>Břeclav</name>
+        <latitude>48.7536757</latitude>
+        <longitude>16.8924738</longitude>
+        <transportType>
+            <name>Train</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>105</stationId>
+        <name>Kúty</name>
+        <latitude>48.6621208</latitude>
+        <longitude>17.0471992</longitude>
+        <transportType>
+            <name>Train</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>106</stationId>
+        <name>Bratislava hl.st.</name>
+        <latitude>48.1586132</latitude>
+        <longitude>17.1060975</longitude>
+        <transportType>
+            <name>Train</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>107</stationId>
+        <name>Bratislava-Vinohrady</name>
+        <latitude>48.1868475</latitude>
+        <longitude>17.1338485</longitude>
+        <transportType>
+            <name>Train</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>108</stationId>
+        <name>Galanta</name>
+        <latitude>48.185312</latitude>
+        <longitude>17.7229379</longitude>
+        <transportType>
+            <name>Train</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>109</stationId>
+        <name>Šaľa</name>
+        <latitude>48.1513924</latitude>
+        <longitude>17.8756083</longitude>
+        <transportType>
+            <name>Train</name>
+        </transportType>
+    </Station>
+    <Station xml:lang="cs">
+        <stationId>110</stationId>
+        <name>Nové zámky</name>
+        <latitude>47.9945714</latitude>
+        <longitude>18.1740287</longitude>
+        <transportType>
+            <name>Train</name>
+        </transportType>
+    </Station>
+</Stations>

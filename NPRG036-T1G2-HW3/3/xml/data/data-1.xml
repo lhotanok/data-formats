@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Passengers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="../schemas/schema-1.xsd">
+    <Passenger xml:lang="cs">
+        <firstName>Milan</firstName>
+        <surname>Hrušovský</surname>
+        <owns>
+            <destinationTickets>
+                <DestinationTicket>
+                    <ticketId>1</ticketId>
+                    <validFrom>2023-04-17T17:00:00</validFrom>
+                    <validTo>2023-04-17T23:59:59</validTo>
+                    <fromStationId>100</fromStationId>
+                    <toStationId>103</toStationId>
+                </DestinationTicket>
+            </destinationTickets>
+        </owns>
+    </Passenger>
+    <Passenger xml:lang="en">
+        <firstName>Frodo</firstName>
+        <surname>Bublik</surname>
+        <owns>
+            <timeTickets>
+                <TimeTicket>
+                    <ticketId>2</ticketId>
+                    <validFrom>2023-01-25T17:00:00</validFrom>
+                    <validTo>2023-01-25T20:00:00</validTo>
+                </TimeTicket>
+            </timeTickets>
+        </owns>
+    </Passenger>
+    <Passenger xml:lang="en">
+        <firstName>Darth</firstName>
+        <surname>Vader</surname>
+        <owns>
+            <timeTickets>
+                <TimeTicket>
+                    <ticketId>3</ticketId>
+                    <validFrom>2022-12-04T23:30:00</validFrom>
+                    <validTo>2022-12-05T00:30:00</validTo>
+                </TimeTicket>
+            </timeTickets>
+            <destinationTickets>
+                <DestinationTicket>
+                    <ticketId>5</ticketId>
+                    <validFrom>2023-04-20T09:00:00</validFrom>
+                    <validTo>2023-04-20T20:00:00</validTo>
+                    <fromStationId>100</fromStationId>
+                    <toStationId>103</toStationId>
+                </DestinationTicket>
+            </destinationTickets>
+        </owns>
+    </Passenger>
+    <Passenger xml:lang="en">
+        <firstName>Luke</firstName>
+        <surname>Skywalker</surname>
+        <owns>
+            <timeTickets>
+                <TimeTicket>
+                    <ticketId>4</ticketId>
+                    <validFrom>2022-12-24T17:00:00</validFrom>
+                    <validTo>2022-12-24T18:00:00</validTo>
+                </TimeTicket>
+            </timeTickets>
+            <destinationTickets>
+                <DestinationTicket>
+                    <ticketId>6</ticketId>
+                    <validFrom>2023-04-17T12:00:00</validFrom>
+                    <validTo>2023-04-17T22:00:00</validTo>
+                    <fromStationId>104</fromStationId>
+                    <toStationId>103</toStationId>
+                </DestinationTicket>
+            </destinationTickets>
+        </owns>
+    </Passenger>
+</Passengers>

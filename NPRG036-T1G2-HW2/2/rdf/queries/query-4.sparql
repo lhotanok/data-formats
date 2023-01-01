@@ -1,0 +1,27 @@
+# Find all passengers who have ticket for 17th April 2023 from Praha hl.n. to Brno hl.n..
+# Include passengers' IRIs, full name in 1 column and ticket validity period.
+
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX ex: <https://example.org/vocabulary/>
+PREFIX extype: <https://example.org/resource/transporttypes/>
+
+SELECT DISTINCT ?passenger ?fullName ?validFrom ?validTo
+WHERE {
+    ?passenger a ex:Passenger ;
+  		foaf:givenName ?givenName ;
+    	foaf:familyName ?familyName ;
+     	ex:owns ?ticket .
+
+    ?ticket a ex:DestinationTicket ;
+      	ex:validFrom ?validFrom ;
+        ex:validTo ?validTo ;
+      	ex:from ?startStation ;
+       	ex:to ?destStation .
+
+  	?startStation ex:stationName "Praha hl.n."@cs .
+  	?destStation ex:stationName "Brno hl.n."@cs .
+
+    BIND(STR(?givenName) + " " + STR(?familyName) as ?fullName)
+
+    FILTER(SUBSTR(STR(?validFrom), 0, 11)="2023-04-17")
+}

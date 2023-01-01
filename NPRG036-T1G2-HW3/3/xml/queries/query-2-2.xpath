@@ -1,0 +1,3 @@
+(: What is the second name of the TransportType of the fourth station? :)
+
+/Stations/Station[4]/transportType[2]/name

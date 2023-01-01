@@ -1,0 +1,977 @@
+@prefix ex: <https://example.org/vocabulary/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix xsd: <https://www.w3.org/TR/xmlschema11-2/> .
+
+################
+#   Ontology   #
+################
+
+#Classes
+ex:Passenger a rdfs:Class .
+ex:Passenger rdf:subClassOf foaf:Person ;
+    rdfs:label "Passenger"@en ;
+    rdfs:comment "Passenger in public transport"@en .
+
+
+ex:Ticket a rdfs:Class .
+ex:ticketId a rdf:Property ;
+    rdfs:label "Passenger's ticket ID"@en ;
+    rdfs:comment "Unique ID for passenger's ticket ID"@en ;
+    rdfs:domain ex:Ticket ;
+    rdfs:range xsd:string .
+ex:validFrom a rdf:Property ;
+    rdfs:label "Valid from"@en ;
+    rdfs:domain ex:Ticket ;
+    rdfs:range xsd:dateTime .
+ex:validTo a rdf:Property ;
+    rdfs:label "Valid to"@en ;
+    rdfs:domain ex:Ticket ;
+    rdfs:range xsd:dateTime .
+
+ex:TimeTicket a rdfs:Class .
+ex:TimeTicket rdf:subClassOf ex:Ticket .
+
+ex:DestinationTicket a rdfs:Class .
+ex:DestinationTicket rdf:subClassOf ex:Ticket .
+
+
+ex:Station a rdfs:Class ;
+    rdf:subClassOf geo:Point ;
+    rdfs:label "Station"@en ;
+    rdfs:comment "Station for public transport"@en .
+ex:stationName a rdf:Property ;
+    rdfs:label "Name of the station"@en ;
+    rdfs:domain ex:Station ;
+    rdfs:range rdf:langString .
+
+
+ex:TrafficLineStation a rdfs:Class ;
+    rdfs:label "Traffic line station"@en ;
+    rdfs:comment "Station for specific traffic line"@en .
+ex:order a rdf:Property ;
+    rdfs:label "Order of the traffic line"@en ;
+    rdfs:domain ex:TrafficLineStation ;
+    rdfs:range xsd:integer .
+ex:minutesToNext a rdf:Property ;
+    rdfs:label "Minutes to next station"@en ;
+    rdfs:comment "Respresents duration in minutes to the next station"@en ;
+    rdfs:domain ex:TrafficLineStation ;
+    rdfs:range xsd:integer .
+
+
+ex:TrafficLine a rdfs:Class ;
+    rdfs:label "Traffic line"@en ;
+    rdfs:comment "Entity for one traffic line"@en .
+ex:trafficLineId a rdf:Property ;
+    rdfs:label "Traffic line ID"@en ;
+    rdfs:comment "Unique ID for traffic line"@en ;
+    rdfs:domain ex:TrafficLine ;
+    rdfs:range xsd:integer .
+
+
+ex:Departures a rdfs:Class;
+    rdfs:label "Departures for traffic line"@en;
+    rdfs:comment "Entity respresenting schedule of departures"@en.
+ex:businessDay a rdf:Property ;
+    rdfs:label "Bussines Days"@en ;
+    rdfs:comment "Departure times for business days"@en ;
+    rdfs:domain ex:Departures ;
+    rdfs:range xsd:time .
+ex:saturday a rdf:Property ;
+    rdfs:label "Saturday"@en ;
+    rdfs:comment "Departure times for Saturday"@en;
+    rdfs:domain ex:Departures ;
+    rdfs:range xsd:time .
+ex:sunday a rdf:Property ;
+    rdfs:label "Sunday"@en ;
+    rdfs:comment "Departure times for Sunday"@en ;
+    rdfs:domain ex:Departures ;
+    rdfs:range xsd:time .
+ex:holidays a rdf:Property ;
+    rdfs:label "Holidays"@en ;
+    rdfs:comment "Departure dates for holidays. Departure times are same as of Sunday."@en ;
+    rdfs:domain ex:Departures ;
+    rdfs:range xsd:date .
+
+ex:TransportType a rdfs:Class ;
+    rdfs:label "Type"@en ;
+    rdfs:comment "Represent different types of public transport"@en .
+ex:transportTypeName a rdf:Property ;
+    rdfs:label "Name of the transport type"@en ;
+    rdfs:domain ex:TransportType ;
+    rdfs:range rdf:langString .
+
+#Relations
+ex:owns a rdf:Property ;
+    rdfs:label "Owns"@en ;
+    rdfs:domain ex:Passenger ;
+    rdfs:range ex:Ticket .
+
+ex:from a rdf:Property;
+    rdfs:label "From"@en ;
+    rdfs:domain ex:DestinationTicket ;
+    rdfs:range ex:Station .
+
+ex:to a rdf:Property ;
+    rdfs:label "To"@en ;
+    rdfs:domain ex:DestinationTicket;
+    rdfs:range ex:Station .
+
+ex:stationHasType a rdf:Property ;
+    rdfs:label "Has"@en ;
+    rdfs:domain ex:Station ;
+    rdfs:range ex:TransportType .
+
+ex:trafficLineStationHasStation a rdf:Property ;
+    rdfs:label "Has"@en ;
+    rdfs:domain ex:TrafficLineStation ;
+    rdfs:range ex:Station .
+
+ex:trafficLineHasType a rdf:Property ;
+    rdfs:label "Has"@en ;
+    rdfs:domain ex:TrafficLine ;
+    rdfs:range ex:TransportType .
+
+ex:contains a rdf:Property ;
+    rdfs:label "Contains"@en ;
+    rdfs:domain ex:TrafficLine ;
+    rdfs:range ex:TrafficLineStation .
+
+ex:follows a rdf:Property ;
+    rdfs:label "Follows"@en ;
+    rdfs:domain ex:TrafficLine ;
+    rdfs:range ex:Departures .
+
+#################
+#   Instances   #
+#################
+
+#ex:Passenger
+@prefix expas: <https://example.org/resource/passengers/>.
+
+expas:expas0001 a ex:Passenger ;
+    foaf:givenName "Milan"@cs ;
+    foaf:familyName "Hrušovský"@cs .
+
+expas:expas0002 a ex:Passenger ;
+    foaf:givenName "Frodo"@en ;
+    foaf:familyName "Bublik"@en .
+
+expas:expas0003 a ex:Passenger ;
+    foaf:givenName "Darth"@en ;
+    foaf:familyName "Vader"@en .
+
+expas:expas0004 a ex:Passenger ;
+    foaf:givenName "Luke"@en ;
+    foaf:familyName "Skywalker"@en .
+
+#ex:TransportType
+@prefix extype: <https://example.org/resource/transporttypes/>.
+
+extype:bus a ex:TransportType ;
+    ex:transportTypeName "Bus"@en .
+
+extype:tram a ex:TransportType ;
+    ex:transportTypeName "Tram"@en .
+
+extype:metro a ex:TransportType ;
+    ex:transportTypeName "Metro"@en .
+
+extype:train a ex:TransportType ;
+    ex:transportTypeName "Train"@en .
+
+extype:ferry a ex:TransportType ;
+    ex:transportTypeName "Ferry"@en .
+
+extype:funicular a ex:TransportType ;
+    ex:transportTypeName "Funicular"@en .
+
+#ex:Station
+@prefix exstation: <https://example.org/resource/stations/>.
+
+#Tram stations
+
+exstation:station0001 a ex:Station ;
+    ex:stationName "Bílá Labuť"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.090168 ;
+    geo:long 14.43547 .
+
+exstation:station0002 a ex:Station ;
+    ex:stationName "Masarykovo Nádraží"@cs ;
+    ex:stationHasType extype:tram ;
+    ex:stationHasType extype:bus ;
+    geo:lat 50.081158 ;
+    geo:long 14.4195921 .
+
+exstation:station0003 a ex:Station ;
+    ex:stationName "Jindřišská"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.081158 ;
+    geo:long 14.4195921 .
+
+exstation:station0004 a ex:Station ;
+    ex:stationName "Václavské náměstí"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.081158 ;
+    geo:long 14.4195921 .
+
+exstation:station0005 a ex:Station ;
+    ex:stationName "Vodičkova"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.081158 ;
+    geo:long 14.4195921 .
+
+exstation:station0006 a ex:Station ;
+    ex:stationName "Lazarská"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.081158 ;
+    geo:long 14.4195921 .
+
+exstation:station0007 a ex:Station ;
+    ex:stationName "Národní Třída"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.081158 ;
+    geo:long 14.4195921 .
+
+exstation:station0008 a ex:Station ;
+    ex:stationName "Národní Divadlo"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.0824531 ;
+    geo:long 14.4131844 .
+
+exstation:station0009 a ex:Station ;
+    ex:stationName "Újezd"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.081676 ;
+    geo:long 14.404443 .
+
+exstation:station00010 a ex:Station ;
+    ex:stationName "Hellichova"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.085659 ;
+    geo:long 14.404176 .
+
+exstation:station0011 a ex:Station ;
+    ex:stationName "Malostranské Náměstí"@cs ;
+    ex:stationHasType extype:tram ;
+    ex:stationHasType extype:bus ;
+    geo:lat 50.08798 ;
+    geo:long 14.40433 .
+
+exstation:station0012 a ex:Station ;
+    ex:stationName "Malostranská"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.090363 ;
+    geo:long 14.410101 .
+
+exstation:station0013 a ex:Station ;
+    ex:stationName "Královský Letohrádek"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.094265 ;
+    geo:long 14.404549 .
+
+exstation:station0014 a ex:Station ;
+    ex:stationName "Pražský Hrad"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.093323 ;
+    geo:long 14.398007 .
+
+exstation:station0015 a ex:Station ;
+    ex:stationName "Brusnice"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.093323 ;
+    geo:long 14.398007 .
+
+exstation:station0016 a ex:Station ;
+    ex:stationName "Pohořelec"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.093323 ;
+    geo:long 14.398007 .
+
+exstation:station0017 a ex:Station ;
+    ex:stationName "Malovanka"@cs ;
+    ex:stationHasType extype:tram ;
+    ex:stationHasType extype:bus ;
+    geo:lat 50.093323 ;
+    geo:long 14.398007 .
+
+exstation:station0018 a ex:Station ;
+    ex:stationName "Marjánka"@cs ;
+    ex:stationHasType extype:tram ;
+    ex:stationHasType extype:bus ;
+    geo:lat 50.093323 ;
+    geo:long 14.398007 .
+
+exstation:station0019 a ex:Station ;
+    ex:stationName "Drinopol"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.093323 ;
+    geo:long 14.398007 .
+
+exstation:station0020 a ex:Station ;
+    ex:stationName "U Kaštanu"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.08363 ;
+    geo:long 14.36335 .
+
+exstation:station0021 a ex:Station ;
+    ex:stationName "Břevnovský Klášter"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.093323 ;
+    geo:long 14.398007 .
+
+exstation:station0022 a ex:Station ;
+    ex:stationName "Říčanova"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.08133 ;
+    geo:long 14.35277 .
+
+exstation:station0023 a ex:Station ;
+    ex:stationName "Vypich"@cs ;
+    ex:stationHasType extype:tram ;
+    ex:stationHasType extype:bus ;
+    geo:lat 50.0796863 ;
+    geo:long 14.3464722 .
+
+exstation:station0024 a ex:Station ;
+    ex:stationName "Obora Hvězda"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.078121 ;
+    geo:long 14.340657 .
+
+exstation:station0025 a ex:Station ;
+    ex:stationName "Malý Břevnov"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.076279 ;
+    geo:long 14.332569 .
+
+exstation:station0026 a ex:Station ;
+    ex:stationName "Bílá Hora"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.07555 ;
+    geo:long 14.32279 .
+
+exstation:station0027 a ex:Station ;
+    ex:stationName "Anděl"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.07193 ;
+    geo:long 14.4036309 .
+
+exstation:station0028 a ex:Station ;
+    ex:stationName "Arbesovo náměstí"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.0762107 ;
+    geo:long 14.4041746 .
+
+exstation:station0029 a ex:Station ;
+    ex:stationName "Švandovo divadlo"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.0762107 ;
+    geo:long 14.4041746 .
+
+exstation:station0030 a ex:Station ;
+    ex:stationName "Čechův most"@cs ;
+    ex:stationHasType extype:tram ;
+    geo:lat 50.0940657 ;
+    geo:long 14.4167362 .
+
+#Funicular stations
+
+exstation:station0080 a ex:Station ;
+    ex:stationName "Petřín"@cs ;
+    ex:stationHasType extype:funicular ;
+    geo:lat 50.0819497 ;
+    geo:long 14.3966883 .
+
+exstation:station0081 a ex:Station ;
+    ex:stationName "Nebozízek"@cs ;
+    ex:stationHasType extype:funicular ;
+    geo:lat 50.08226 ;
+    geo:long 14.39926 .
+
+exstation:station0082 a ex:Station ;
+    ex:stationName "Újezd"@cs ;
+    ex:stationHasType extype:funicular ;
+    geo:lat 50.082649 ;
+    geo:long 14.403681 .
+
+#Train stations
+
+exstation:station0100 a ex:Station ;
+    ex:stationName "Praha hl.n."@cs ;
+    ex:stationName "Praha hl.n."@sk ;
+    ex:stationHasType extype:train ;
+    geo:lat 50.0832088 ;
+    geo:long 14.4353059 .
+
+exstation:station0101 a ex:Station ;
+    ex:stationName "Kolín"@cs ;
+    ex:stationName "Kolín"@sk ;
+    ex:stationHasType extype:train ;
+    geo:lat 50.0251424 ;
+    geo:long 15.2135959 .
+
+exstation:station0102 a ex:Station ;
+    ex:stationName "Brno-Královo Pole"@cs ;
+    ex:stationName "Brno-Královo Pole"@sk ;
+    ex:stationHasType extype:train ;
+    geo:lat 49.2306224 ;
+    geo:long 16.5961361 .
+
+exstation:station0103 a ex:Station ;
+    ex:stationName "Brno hl.n."@cs ;
+    ex:stationName "Brno hl.n."@sk ;
+    ex:stationHasType extype:train ;
+    geo:lat 49.1908371 ;
+    geo:long 16.6126478 .
+
+exstation:station0104 a ex:Station ;
+    ex:stationName "Břeclav"@cs ;
+    ex:stationName "Břeclav"@sk ;
+    ex:stationHasType extype:train ;
+    geo:lat 48.7536757 ;
+    geo:long 16.8924738 .
+
+exstation:station0105 a ex:Station ;
+    ex:stationName "Kúty"@cs ;
+    ex:stationName "Kúty"@sk ;
+    ex:stationHasType extype:train ;
+    geo:lat 48.6621208 ;
+    geo:long 17.0471992 .
+
+exstation:station0106 a ex:Station ;
+    ex:stationName "Bratislava hl.st."@cs ;
+    ex:stationName "Bratislava hl.st."@sk ;
+    ex:stationHasType extype:train ;
+    geo:lat 48.1586132 ;
+    geo:long 17.1060975 .
+
+exstation:station0107 a ex:Station ;
+    ex:stationName "Bratislava-Vinohrady"@cs ;
+    ex:stationName "Bratislava-Vinohrady"@sk ;
+    ex:stationHasType extype:train ;
+    geo:lat 48.1868475 ;
+    geo:long 17.1338485 .
+
+exstation:station0108 a ex:Station ;
+    ex:stationName "Galanta"@cs ;
+    ex:stationName "Galanta"@sk ;
+    ex:stationHasType extype:train ;
+    geo:lat 48.185312 ;
+    geo:long 17.7229379 .
+
+exstation:station0109 a ex:Station ;
+    ex:stationName "Šaľa"@cs ;
+    ex:stationName "Šaľa"@sk ;
+    ex:stationHasType extype:train ;
+    geo:lat 48.1513924 ;
+    geo:long 17.8756083 .
+
+exstation:station0110 a ex:Station ;
+    ex:stationName "Nové zámky"@cs ;
+    ex:stationName "Nové zámky"@sk ;
+    ex:stationHasType extype:train ;
+    geo:lat 47.9945714 ;
+    geo:long 18.1740287 .
+
+#ex:Ticket
+@prefix extick: <https://example.org/resource/tickets/>.
+
+extick:ticket0001 a ex:DestinationTicket ;
+    ex:ticketId 1 ;
+    ex:from exstation:station0100;
+    ex:to exstation:station0103;
+    ex:validFrom "2023-04-17+17:00:00"^^xsd:dateTime ; #dateTime YYYY-MM-DDThh:mm:ss
+    ex:validTo "2023-04-17+23:59:59"^^xsd:dateTime .
+
+extick:ticket0002 a ex:TimeTicket ;
+    ex:ticketId 2 ;
+    ex:validFrom "2023-01-25+17:00:00"^^xsd:dateTime ;
+    ex:validTo "2023-01-25+20:00:00"^^xsd:dateTime .
+
+extick:ticket0003 a ex:TimeTicket ;
+    ex:ticketId 3 ;
+    ex:validFrom "2022-12-04+23:30:00"^^xsd:dateTime ;
+    ex:validTo "2022-12-05+00:30:00"^^xsd:dateTime .
+
+extick:ticket0004 a ex:TimeTicket ;
+    ex:ticketId 4 ;
+    ex:validFrom "2022-12-24+17:00:00"^^xsd:dateTime ;
+    ex:validTo "2022-12-24+18:00:00"^^xsd:dateTime .
+
+extick:ticket0005 a ex:DestinationTicket ;
+    ex:ticketId 5 ;
+    ex:from exstation:station0100;
+    ex:to exstation:station0103;
+    ex:validFrom "2023-04-20+09:00:00"^^xsd:dateTime ;
+    ex:validTo "2023-04-20+20:00:00"^^xsd:dateTime .
+
+extick:ticket0006 a ex:DestinationTicket ;
+    ex:ticketId 5 ;
+    ex:from exstation:station0104;
+    ex:to exstation:station0103;
+    ex:validFrom "2023-04-17+12:00:00"^^xsd:dateTime ;
+    ex:validTo "2023-04-17+22:00:00"^^xsd:dateTime .
+
+#Passengers and tickets associations
+
+expas:expas0001 ex:owns extick:ticket0001 .
+expas:expas0002 ex:owns extick:ticket0002 .
+expas:expas0003 ex:owns extick:ticket0003 ;
+    ex:owns extick:ticket0005 .
+expas:expas0004 ex:owns extick:ticket0004 ;
+    ex:owns extick:ticket0006 .
+
+#ex:TrafficLine
+@prefix extrfcln: <https://example.org/resource/trafficline/>.
+
+extrfcln:trafficline0001 a ex:TrafficLine ;
+    ex:trafficLineHasType extype:tram ;
+    ex:trafficLineId 22 .
+
+extrfcln:trafficline0002 a ex:TrafficLine ;
+    ex:trafficLineHasType extype:tram ;
+    ex:trafficLineId 15 .
+
+extrfcln:trafficline0003 a ex:TrafficLine ;
+    ex:trafficLineHasType extype:train ;
+    ex:trafficLineId 283 .
+
+extrfcln:trafficline0004 a ex:TrafficLine ;
+    ex:trafficLineHasType extype:funicular ;
+    ex:trafficLineId 80 .
+
+extrfcln:trafficline0005 a ex:TrafficLine ;
+    ex:trafficLineHasType extype:funicular ;
+    ex:trafficLineId 81 .
+
+#ex:TrafficLineStation
+@prefix extrfclnstn: <https://example.org/resource/trafficlinestation/>.
+
+# Corresponding traffic line stations for traffic line with id == 22
+extrfclnstn:trafficlinestation_22_0001 a ex:TrafficLineStation ;
+    ex:order 1 ;
+    ex:minutesToNext 2 ;
+    ex:trafficLineStationHasStation exstation:station0001 .
+
+extrfclnstn:trafficlinestation_22_0002 a ex:TrafficLineStation ;
+    ex:order 2 ;
+    ex:minutesToNext 1 ;
+    ex:trafficLineStationHasStation exstation:station0002 .
+
+extrfclnstn:trafficlinestation_22_0003 a ex:TrafficLineStation ;
+    ex:order 3 ;
+    ex:minutesToNext 2 ;
+    ex:trafficLineStationHasStation exstation:station0003 .
+
+extrfclnstn:trafficlinestation_22_0004 a ex:TrafficLineStation ;
+    ex:order 4 ;
+    ex:minutesToNext 3 ;
+    ex:trafficLineStationHasStation exstation:station0004 .
+
+extrfclnstn:trafficlinestation_22_0005 a ex:TrafficLineStation ;
+    ex:order 5 ;
+    ex:minutesToNext 5 ;
+    ex:trafficLineStationHasStation exstation:station0005 .
+
+extrfclnstn:trafficlinestation_22_0006 a ex:TrafficLineStation ;
+    ex:order 6 ;
+    ex:minutesToNext 7 ;
+    ex:trafficLineStationHasStation exstation:station0006 .
+
+extrfclnstn:trafficlinestation_22_0007 a ex:TrafficLineStation ;
+    ex:order 7 ;
+    ex:minutesToNext 3 ;
+    ex:trafficLineStationHasStation exstation:station0007 .
+
+extrfclnstn:trafficlinestation_22_0008 a ex:TrafficLineStation ;
+    ex:order 8 ;
+    ex:minutesToNext 2 ;
+    ex:trafficLineStationHasStation exstation:station0008 .
+
+extrfclnstn:trafficlinestation_22_0009 a ex:TrafficLineStation ;
+    ex:order 9 ;
+    ex:minutesToNext 1 ;
+    ex:trafficLineStationHasStation exstation:station0009 .
+
+extrfclnstn:trafficlinestation_22_0010 a ex:TrafficLineStation ;
+    ex:order 10 ;
+    ex:minutesToNext 3 ;
+    ex:trafficLineStationHasStation exstation:station0010 .
+
+extrfclnstn:trafficlinestation_22_0011 a ex:TrafficLineStation ;
+    ex:order 11 ;
+    ex:minutesToNext 2 ;
+    ex:trafficLineStationHasStation exstation:station0011 .
+
+extrfclnstn:trafficlinestation_22_0012 a ex:TrafficLineStation ;
+    ex:order 12 ;
+    ex:minutesToNext 4 ;
+    ex:trafficLineStationHasStation exstation:station0012 .
+
+extrfclnstn:trafficlinestation_22_0013 a ex:TrafficLineStation ;
+    ex:order 13 ;
+    ex:minutesToNext 3 ;
+    ex:trafficLineStationHasStation exstation:station0013 .
+
+extrfclnstn:trafficlinestation_22_0014 a ex:TrafficLineStation ;
+    ex:order 14 ;
+    ex:minutesToNext 2 ;
+    ex:trafficLineStationHasStation exstation:station0014 .
+
+extrfclnstn:trafficlinestation_22_0015 a ex:TrafficLineStation ;
+    ex:order 15 ;
+    ex:minutesToNext 1 ;
+    ex:trafficLineStationHasStation exstation:station0015 .
+
+extrfclnstn:trafficlinestation_22_0016 a ex:TrafficLineStation ;
+    ex:order 16 ;
+    ex:minutesToNext 5 ;
+    ex:trafficLineStationHasStation exstation:station0016 .
+
+extrfclnstn:trafficlinestation_22_0017 a ex:TrafficLineStation ;
+    ex:order 17 ;
+    ex:minutesToNext 3 ;
+    ex:trafficLineStationHasStation exstation:station0017 .
+
+extrfclnstn:trafficlinestation_22_0018 a ex:TrafficLineStation ;
+    ex:order 18 ;
+    ex:minutesToNext 4 ;
+    ex:trafficLineStationHasStation exstation:station0018 .
+
+extrfclnstn:trafficlinestation_22_0019 a ex:TrafficLineStation ;
+    ex:order 19 ;
+    ex:minutesToNext 1 ;
+    ex:trafficLineStationHasStation exstation:station0019 .
+
+extrfclnstn:trafficlinestation_22_0020 a ex:TrafficLineStation ;
+    ex:order 20 ;
+    ex:minutesToNext 2 ;
+    ex:trafficLineStationHasStation exstation:station0020 .
+
+extrfclnstn:trafficlinestation_22_0021 a ex:TrafficLineStation ;
+    ex:order 21 ;
+    ex:minutesToNext 3 ;
+    ex:trafficLineStationHasStation exstation:station0021 .
+
+extrfclnstn:trafficlinestation_22_0022 a ex:TrafficLineStation ;
+    ex:order 22 ;
+    ex:minutesToNext 4 ;
+    ex:trafficLineStationHasStation exstation:station0022 .
+
+extrfclnstn:trafficlinestation_22_0023 a ex:TrafficLineStation ;
+    ex:order 23 ;
+    ex:minutesToNext 5 ;
+    ex:trafficLineStationHasStation exstation:station0023 .
+
+extrfclnstn:trafficlinestation_22_0024 a ex:TrafficLineStation ;
+    ex:order 24 ;
+    ex:minutesToNext 1 ;
+    ex:trafficLineStationHasStation exstation:station0024 .
+
+extrfclnstn:trafficlinestation_22_0025 a ex:TrafficLineStation ;
+    ex:order 25 ;
+    ex:minutesToNext 2 ;
+    ex:trafficLineStationHasStation exstation:station0025 .
+
+extrfclnstn:trafficlinestation_22_0026 a ex:TrafficLineStation ;
+    ex:order 26 ;
+    ex:minutesToNext 0 ;
+    ex:trafficLineStationHasStation exstation:station0026 .
+
+# Corresponding traffic line stations for traffic line with id == 15
+extrfclnstn:trafficlinestation_15_0001 a ex:TrafficLineStation ;
+    ex:order 1 ;
+    ex:minutesToNext 3 ;
+    ex:trafficLineStationHasStation exstation:station0027 .
+
+extrfclnstn:trafficlinestation_15_0002 a ex:TrafficLineStation ;
+    ex:order 2 ;
+    ex:minutesToNext 2 ;
+    ex:trafficLineStationHasStation exstation:station0028 .
+
+extrfclnstn:trafficlinestation_15_0003 a ex:TrafficLineStation ;
+    ex:order 3 ;
+    ex:minutesToNext 4 ;
+    ex:trafficLineStationHasStation exstation:station0028 .
+
+extrfclnstn:trafficlinestation_15_0004 a ex:TrafficLineStation ;
+    ex:order 4 ;
+    ex:minutesToNext 1 ;
+    ex:trafficLineStationHasStation exstation:station0029 .
+
+extrfclnstn:trafficlinestation_15_0005 a ex:TrafficLineStation ;
+    ex:order 5 ;
+    ex:minutesToNext 1 ;
+    ex:trafficLineStationHasStation exstation:station0009 .
+
+extrfclnstn:trafficlinestation_15_0006 a ex:TrafficLineStation ;
+    ex:order 6 ;
+    ex:minutesToNext 3 ;
+    ex:trafficLineStationHasStation exstation:station0010 .
+
+extrfclnstn:trafficlinestation_15_0007 a ex:TrafficLineStation ;
+    ex:order 7 ;
+    ex:minutesToNext 2 ;
+    ex:trafficLineStationHasStation exstation:station0011 .
+
+extrfclnstn:trafficlinestation_15_0008 a ex:TrafficLineStation ;
+    ex:order 8 ;
+    ex:minutesToNext 4 ;
+    ex:trafficLineStationHasStation exstation:station0012 .
+
+extrfclnstn:trafficlinestation_15_0009 a ex:TrafficLineStation ;
+    ex:order 9 ;
+    ex:minutesToNext 0 ;
+    ex:trafficLineStationHasStation exstation:station0030 .
+
+# Corresponding traffic line stations for traffic line with id == 80
+
+extrfclnstn:trafficlinestation_80_0001 a ex:TrafficLineStation ;
+    ex:order 1 ;
+    ex:minutesToNext 1 ;
+    ex:trafficLineStationHasStation exstation:station0080 .
+
+extrfclnstn:trafficlinestation_80_0002 a ex:TrafficLineStation ;
+    ex:order 2 ;
+    ex:minutesToNext 3 ;
+    ex:trafficLineStationHasStation exstation:station0081 .
+
+extrfclnstn:trafficlinestation_80_0003 a ex:TrafficLineStation ;
+    ex:order 3 ;
+    ex:minutesToNext 0 ;
+    ex:trafficLineStationHasStation exstation:station0082 .
+
+
+# Corresponding traffic line stations for traffic line with id == 81
+
+extrfclnstn:trafficlinestation_81_0001 a ex:TrafficLineStation ;
+    ex:order 1 ;
+    ex:minutesToNext 3 ;
+    ex:trafficLineStationHasStation exstation:station0082 .
+
+extrfclnstn:trafficlinestation_81_0002 a ex:TrafficLineStation ;
+    ex:order 2 ;
+    ex:minutesToNext 1 ;
+    ex:trafficLineStationHasStation exstation:station0081 .
+
+extrfclnstn:trafficlinestation_81_0003 a ex:TrafficLineStation ;
+    ex:order 3 ;
+    ex:minutesToNext 0 ;
+    ex:trafficLineStationHasStation exstation:station0080 .
+
+# Associations between traffic line 0001 and its traffic line stations
+
+extrfcln:trafficline0001 ex:contains extrfclnstn:trafficlinestation_22_0001 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0002 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0003 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0004 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0005 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0006 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0007 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0008 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0009 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0010 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0011 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0012 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0013 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0014 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0015 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0016 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0017 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0018 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0019 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0020 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0021 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0022 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0023 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0024 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0025 ;
+    ex:contains extrfclnstn:trafficlinestation_22_0026 .
+
+# Associations between traffic line 0002 and its traffic line stations
+
+extrfcln:trafficline0002 ex:contains extrfclnstn:trafficlinestation_15_0001 ;
+    ex:contains extrfclnstn:trafficlinestation_15_0002 ;
+    ex:contains extrfclnstn:trafficlinestation_15_0003 ;
+    ex:contains extrfclnstn:trafficlinestation_15_0004 ;
+    ex:contains extrfclnstn:trafficlinestation_15_0005 ;
+    ex:contains extrfclnstn:trafficlinestation_15_0006 ;
+    ex:contains extrfclnstn:trafficlinestation_15_0007 ;
+    ex:contains extrfclnstn:trafficlinestation_15_0008 ;
+    ex:contains extrfclnstn:trafficlinestation_15_0009 .
+
+# Associations between traffic line 0004 and its traffic line stations
+
+extrfcln:trafficline0004 ex:contains extrfclnstn:trafficlinestation_80_0001 ;
+    ex:contains extrfclnstn:trafficlinestation_80_0002 ;
+    ex:contains extrfclnstn:trafficlinestation_80_0003 .
+
+# Associations between traffic line 0005 and its traffic line stations
+
+extrfcln:trafficline0005 ex:contains extrfclnstn:trafficlinestation_81_0001 ;
+    ex:contains extrfclnstn:trafficlinestation_81_0002 ;
+    ex:contains extrfclnstn:trafficlinestation_81_0003 .
+
+#ex:Departures
+@prefix exdep: <https://example.org/resource/departures/> .
+
+extrfcln:trafficline0001 ex:follows exdep:depforline0001 .
+
+exdep:depforline0001 a ex:Departures ;
+    ex:businessDay "05:30:00"^^xsd:time ;
+    ex:businessDay "06:30:00"^^xsd:time ;
+    ex:businessDay "07:30:00"^^xsd:time ;
+    ex:businessDay "08:30:00"^^xsd:time ;
+    ex:businessDay "09:30:00"^^xsd:time ;
+    ex:businessDay "10:30:00"^^xsd:time ;
+    ex:businessDay "11:30:00"^^xsd:time ;
+    ex:businessDay "12:30:00"^^xsd:time ;
+    ex:businessDay "13:30:00"^^xsd:time ;
+    ex:businessDay "14:30:00"^^xsd:time ;
+    ex:businessDay "15:30:00"^^xsd:time ;
+    ex:businessDay "16:30:00"^^xsd:time ;
+    ex:businessDay "17:30:00"^^xsd:time ;
+    ex:businessDay "18:30:00"^^xsd:time ;
+    ex:businessDay "19:30:00"^^xsd:time ;
+    ex:businessDay "20:30:00"^^xsd:time ;
+    ex:businessDay "21:30:00"^^xsd:time ;
+    ex:businessDay "22:30:00"^^xsd:time ;
+    ex:businessDay "23:30:00"^^xsd:time ;
+
+    ex:saturday "15:30:00"^^xsd:time ;
+    ex:saturday "17:30:00"^^xsd:time ;
+    ex:saturday "19:30:00"^^xsd:time ;
+    ex:saturday "21:30:00"^^xsd:time ;
+
+    ex:sunday "15:30:00"^^xsd:time ;
+    ex:sunday "18:30:00"^^xsd:time ;
+    ex:sunday "21:30:00"^^xsd:time ;
+
+    # departures on holidays follow Sunday departures
+    ex:holidays "2023-01-01"^^xsd:date ;
+    ex:holidays "2023-05-01"^^xsd:date ;
+    ex:holidays "2023-05-08"^^xsd:date ;
+    ex:holidays "2023-07-05"^^xsd:date ;
+    ex:holidays "2023-07-06"^^xsd:date ;
+    ex:holidays "2023-09-28"^^xsd:date ;
+    ex:holidays "2023-10-28"^^xsd:date ;
+    ex:holidays "2023-11-17"^^xsd:date ;
+    ex:holidays "2023-12-24"^^xsd:date ;
+    ex:holidays "2023-12-25"^^xsd:date ;
+    ex:holidays "2023-12-26"^^xsd:date .
+
+extrfcln:trafficline0002 ex:follows exdep:depforline0002 .
+
+exdep:depforline0002 a ex:Departures ;
+    ex:businessDay "07:30:00"^^xsd:time ;
+    ex:businessDay "08:30:00"^^xsd:time ;
+    ex:businessDay "09:30:00"^^xsd:time ;
+    ex:businessDay "10:30:00"^^xsd:time ;
+    ex:businessDay "11:30:00"^^xsd:time ;
+    ex:businessDay "12:30:00"^^xsd:time ;
+    ex:businessDay "13:30:00"^^xsd:time ;
+    ex:businessDay "14:30:00"^^xsd:time ;
+    ex:businessDay "15:30:00"^^xsd:time ;
+    ex:businessDay "16:30:00"^^xsd:time ;
+    ex:businessDay "17:30:00"^^xsd:time ;
+    ex:businessDay "18:30:00"^^xsd:time ;
+    ex:businessDay "19:30:00"^^xsd:time ;
+    ex:businessDay "20:30:00"^^xsd:time ;
+    ex:businessDay "21:30:00"^^xsd:time ;
+    ex:businessDay "22:30:00"^^xsd:time ;
+    ex:businessDay "23:30:00"^^xsd:time ;
+
+    ex:saturday "9:30:00"^^xsd:time ;
+    ex:saturday "11:30:00"^^xsd:time ;
+    ex:saturday "13:30:00"^^xsd:time ;
+    ex:saturday "15:30:00"^^xsd:time ;
+
+    ex:sunday "09:00:00"^^xsd:time ;
+    ex:sunday "10:00:00"^^xsd:time ;
+    ex:sunday "11:00:00"^^xsd:time ;
+
+    # departures on holidays follow Sunday departures
+    ex:holidays "2023-01-01"^^xsd:date ;
+    ex:holidays "2023-05-08"^^xsd:date ;
+    ex:holidays "2023-09-28"^^xsd:date ;
+    ex:holidays "2023-10-28"^^xsd:date ;
+    ex:holidays "2023-11-17"^^xsd:date ;
+    ex:holidays "2023-12-24"^^xsd:date ;
+    ex:holidays "2023-12-25"^^xsd:date ;
+    ex:holidays "2023-12-26"^^xsd:date .
+
+extrfcln:trafficline0003 ex:follows exdep:trafficline0003 .
+
+exdep:trafficline0003 a ex:Departures ;
+    ex:businessDay "10:30:00"^^xsd:time ;
+    ex:businessDay "11:00:00"^^xsd:time ;
+    ex:businessDay "11:30:00"^^xsd:time ;
+    ex:businessDay "12:00:00"^^xsd:time ;
+    ex:businessDay "12:30:00"^^xsd:time ;
+
+    ex:saturday "12:30:00"^^xsd:time ;
+
+    ex:sunday "16:30:00"^^xsd:time ;
+
+    # departures on holidays follow Sunday departures
+    ex:holidays "2023-01-01"^^xsd:date ;
+    ex:holidays "2023-09-28"^^xsd:date ;
+    ex:holidays "2023-10-28"^^xsd:date ;
+    ex:holidays "2023-12-24"^^xsd:date ;
+    ex:holidays "2023-12-25"^^xsd:date ;
+    ex:holidays "2023-12-26"^^xsd:date .
+
+extrfcln:trafficline0004 ex:follows exdep:depforline00040005 .
+extrfcln:trafficline0005 ex:follows exdep:depforline00040005 .
+
+# Funicular lines follow the same departures
+exdep:depforline00040005 a ex:Departures ;
+    ex:businessDay "09:00:00"^^xsd:time ;
+    ex:businessDay "09:30:00"^^xsd:time ;
+    ex:businessDay "10:00:00"^^xsd:time ;
+    ex:businessDay "10:30:00"^^xsd:time ;
+    ex:businessDay "11:00:00"^^xsd:time ;
+    ex:businessDay "12:00:00"^^xsd:time ;
+    ex:businessDay "12:30:00"^^xsd:time ;
+    ex:businessDay "13:00:00"^^xsd:time ;
+    ex:businessDay "13:30:00"^^xsd:time ;
+    ex:businessDay "14:00:00"^^xsd:time ;
+    ex:businessDay "14:30:00"^^xsd:time ;
+    ex:businessDay "15:00:00"^^xsd:time ;
+    ex:businessDay "15:30:00"^^xsd:time ;
+    ex:businessDay "16:00:00"^^xsd:time ;
+    ex:businessDay "16:30:00"^^xsd:time ;
+    ex:businessDay "17:30:00"^^xsd:time ;
+    ex:businessDay "18:30:00"^^xsd:time ;
+    ex:businessDay "19:30:00"^^xsd:time ;
+    ex:businessDay "20:30:00"^^xsd:time ;
+    ex:businessDay "21:00:00"^^xsd:time ;
+    ex:businessDay "21:30:00"^^xsd:time ;
+    ex:businessDay "22:00:00"^^xsd:time ;
+
+    ex:saturday "15:30:00"^^xsd:time ;
+    ex:saturday "21:00:00"^^xsd:time ;
+    ex:saturday "21:30:00"^^xsd:time ;
+    ex:saturday "22:30:00"^^xsd:time ;
+
+    ex:sunday "09:00:00"^^xsd:time ;
+    ex:sunday "10:00:00"^^xsd:time ;
+    ex:sunday "11:00:00"^^xsd:time ;
+
+    # departures on holidays follow Sunday departures
+    ex:holidays "2023-01-01"^^xsd:date ;
+    ex:holidays "2023-05-01"^^xsd:date ;
+    ex:holidays "2023-05-08"^^xsd:date ;
+    ex:holidays "2023-07-05"^^xsd:date ;
+    ex:holidays "2023-07-06"^^xsd:date ;
+    ex:holidays "2023-09-28"^^xsd:date ;
+    ex:holidays "2023-10-28"^^xsd:date ;
+    ex:holidays "2023-11-17"^^xsd:date ;
+    ex:holidays "2023-12-24"^^xsd:date ;
+    ex:holidays "2023-12-25"^^xsd:date ;
+    ex:holidays "2023-12-26"^^xsd:date .

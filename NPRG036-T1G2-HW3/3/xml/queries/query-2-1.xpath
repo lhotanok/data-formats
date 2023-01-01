@@ -1,0 +1,5 @@
+(: What are the names and coordinates of all tram stations? :)
+
+/Stations/Station
+[some $type in transportType/name satisfies $type= "Tram"]
+/(concat(name, " (latitude: ", latitude, ", longitude: ", longitude, ")"))

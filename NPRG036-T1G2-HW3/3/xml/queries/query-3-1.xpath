@@ -1,0 +1,3 @@
+(: What is the TransportType of the second TrafficLine ? :)
+
+/TrafficLines/TrafficLine[2]/transportType/name

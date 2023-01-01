@@ -1,0 +1,41 @@
+# Find all tram lines that visit stations with the following names:
+# Újezd, Malostranské náměstí, Malostranská.
+# Include names of their start and destination stations.
+
+PREFIX ex: <https://example.org/vocabulary/>
+PREFIX extype: <https://example.org/resource/transporttypes/>
+
+SELECT ?trafficLine ?trafficLineId ?startStationName ?destStationName
+WHERE {
+    ?trafficLine a ex:TrafficLine ;
+        ex:trafficLineId ?trafficLineId ;
+        ex:trafficLineHasType extype:tram ;
+        ex:contains ?trafficLineStation ;
+        ex:contains ?startTrafficLineStation ;
+ 		ex:contains ?destTrafficLineStation .
+
+    ?startTrafficLineStation ex:order 1 ;
+        ex:trafficLineStationHasStation ?startStation .
+
+    ?startStation ex:stationName ?startStationName .
+
+    ?destTrafficLineStation ex:minutesToNext 0 ;
+        ex:trafficLineStationHasStation ?destStation .
+
+    ?destStation ex:stationName ?destStationName .
+
+    {
+        SELECT (GROUP_CONCAT(?stationName;separator=" | ") as ?stationNames)
+        WHERE {
+            ?trafficLineStation ex:trafficLineStationHasStation ?station .
+            ?station ex:stationName ?stationName .
+        }
+        HAVING(
+            REGEX(?stationNames, "(| )?Újezd( |)?", "i")
+                && REGEX(?stationNames, "(| )?Malostranské Náměstí( |)?", "i")
+                && REGEX(?stationNames, "(| )?Malostranská( |)?", "i")
+        )
+    }
+}
+GROUP BY ?trafficLine ?trafficLineId ?startStationName ?destStationName
+

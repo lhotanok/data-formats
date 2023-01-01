@@ -1,0 +1,237 @@
+§ 1. Overview
+
+We are modeling system for public transportation that aims to be able to answer following 
+questions: 
+	a) What stops/stations are there in the city/country? 
+	b) What traffic lines are there in the city/country?
+	c) What kind of transportation is the traffic line/station serving? 
+	d) At what times can I depart today from station 's1' using traffic line 'tl' in the direction
+		of station 's2'? 
+	e) How can I get from station 'x' to station 'y' tomorrow from 2PM using only constrained kind
+		of transport means? 
+	f) If we meet passenger 'p' with ticket 't' on date 'd' at time 'tm' on traffic line 'tl' at
+		station 's', is 'p' a stowaway passenger?  
+
+We would like to come up with a conceptual model that such questions will be straightforward to
+answer. 
+
+§ 2. Specification
+
+In this section individual UML classes are defined along with their atributes. Each attribute has
+assigned data type and where cardinality of atribute is different from implicit default [1..1]
+we explicitly mention the different cardinality. We also describe relationships to other UML 
+classes.
+
+§ 2.1 Transport type
+
+Enum value representing different means of public transportation. For our purposes we will
+recognise following enum values: { Bus, Tram, Subway, Train, Airplane, Ferry }. The enum type is present
+in classes: class Station and class TrafficLine.
+
+§ 2.2 Station
+
+Class Station represents physical station or stop. For simplicity we have chosen to use class Station
+for both.
+
+§ 2.2.1 Id
+
+Data type int. 
+
+We needed to mention the id here, because the name later itself cannot guarantee unambiguity. For
+example at Prague's station Kobylisy on website 'seznam.cz' there are stations A to P! These are
+all stations called "Kobylisy", but they differ in place, direction and means of transportation. 
+
+§ 2.2.1 Name
+
+Data type string.
+
+Represents name of the station in human language. Multiple instances of Station can share same name.
+Usually for simple station there are two instances, one in each direction.
+
+§ 2.2.2 Type
+
+Data type list of enum TransportType. Cardinality of the atribute is at least one to many. Note
+that class Station uses different cardinality of TransportType than class TrafficLine. This is due
+to the fact, that station can host traffic line of different types. For example one platform can be
+used both by buses and trams. For traffic lines this is not the case. Usually when bus departs at
+the beginning of the line, you don't expect a subway to arrive at the end. :)
+
+§ 2.2.3 Latitude and longitude 
+
+Data type float.
+
+The geographic coordinate system is a spherical or ellipsoidal coordinate system for measuring and
+communicating positions directly on the Earth as latitude and longitude.
+
+§ 2.3 TrafficLine
+
+Class TrafficLine represents some concrete transportation line in one direction. For example:
+
+class TrafficLine {
+	trafficLineId = 22,
+	name = "Nádraží Hostivař", 
+	type = TransportType.Tram
+}
+
+represents tram 22 at stop 'Malostranské náměstí' in one direction and instance: 
+
+class TrafficLine {
+	trafficLineId = 22,
+	name = "Bílá Hora", 
+	type = TransportType.Tram
+}
+
+represents the same tram line 22, but in the other direction. Note that name is optional value,
+because it can be trivially found using its relationship to TrafficLineStation class, as Station
+instance of TrafficLineStation with highest order (thus being endstation for given line).
+
+$ 2.3.1 TrafficLineId
+
+Data type string.
+
+Represents number of line. A lot of line id are only ints, for example tram lines. However most
+train line ids contain alphanumeric characters and so int type is not usable.
+
+$ 2.3.2 Name
+
+Data type string.
+
+Represents end station for given line. As mentioned above optional, because it can be also found
+through its relationship with TrafficLineStation.
+
+Normally for each trafficLineId we expect two instances of the class with different names. Each
+name for one of the endstations.
+
+$ 2.3.3 Type
+
+Data type enum TransportType.
+
+Represents the means of transportation for given line.
+
+$ 2.3.4 Relationship from TrafficLine to Departures
+
+"TrafficLine follows departures." Formulated more closely to natural language: "Line follows its
+schedule."
+
+Multiplicities in both directions are [1..1]. This is because line can follow only one schedule at
+a time. Likewise one schedule is always planned for one line in one direction.
+
+§ 2.3.5 Relationship from TrafficLine to TrafficLineStation
+
+"Line contains stations."
+
+TrafficLineStation has always one TrafficLine that it belongs to. In the other direction
+TrafficLine must have at least 2 stations to many. Cases where a line would have 0 or 1 station
+don't make any sense. A line must go from point A to point B.
+
+§ 2.4 TrafficLineStation
+
+Represents the relationship between lines and stations. Note the multiplicity relationship:
+one Station usually hosts many lines, sometimes even of different TransportType. A TrafficLine
+on the other usually visits one Station at most on its path from start Station to end Station.
+
+§ 2.4.1 Order
+
+Data type int.
+
+Represents the order of station on given line. Order 0 is always set for start Station. Assume line
+of following Stations: { "Malostranské náměstí", "Hellichova", "Újezd", "Národní divadlo", 
+"Národní třída" }. "Národní třída" recieves order 4. 
+
+Endstation on any line can be found as TrafficLineStation with highest order.
+
+§ 2.4.2 MinutesToNext
+
+Data type int.
+
+Represents how many minutes does it take for the line to reach next station. Used together with
+class Departures we can construct deprature times at all station on any TrafficLine.
+
+§ 2.4.3 Relationship from TrafficLineStation to Station
+
+"TrafficLineStation has Station."
+
+Each TrafficLineStation belong to one Station, multiplicity [1..1]. In the other direction Station
+can host many TrafficLines and thus many instances of TrafficLineStation, multiplicity [0..*].
+
+§ 2.5 Departures
+
+Represents departure times from start Station for given TrafficLine. Departure times differ on
+business days, Saturdays and Sundays. Additionaly contains information about holidays. 
+
+§ 2.5.1 BusinessDay, Saturday, Sunday
+
+Data type time, cardinality zero to many.
+
+Represents a list of times at which the line departs from starstation for given days.
+
+§ 2.5.2 Holidays
+
+Data type date, cardinality zero to many.
+
+Represents a list of holidays throughout the year. Semantically on each holiday day, if given day
+is bussines day, departure times of Sunday override the schedule.
+
+§ 2.6 Ticket
+
+Abstract predecessor of time ticket and destination ticket. Represents minimal information about
+a ticket.
+
+§ 2.6.1 TicketId
+
+Data type int.
+
+Represents unique id of a ticket.
+
+§ 2.6.2 ValidFrom and validTo
+
+Data type dateTime. 
+
+Represents time range in which a ticket is valid. Note that even destination tickets have some time
+range in which they are valid. Value validFrom must be lesser than value validTo, otherwise
+the ticket does not make any sense.
+
+§ 2.7 TimeTicket
+
+Concrete successor of abstract class Ticket. Does not provide any extension in atribute or
+relationship. Passenger with time ticket in range of dateTime now has valid ticket.
+
+§ 2.8 DestinationTicket
+
+Concrete successor of abstract class Ticket. Destination ticket is issued for given line for
+travelling from Station A to Station B.
+
+§ 2.8.1 Relationship from DestinationTicket to Station, "To"
+
+"Ticket to Station."
+
+Represents the station to which the ticket is valid. Ticket has one end station. For one station 
+usually many tickets exist that end their validity in given Station.
+
+§ 2.8.2 Relationship from DestinationTikcet to Station, "From"
+
+"Ticket from Station."
+
+Represents the station from which the ticket is valid. Ticket has one start station. For one station 
+usually many tickets exist that start their validity in given Station.
+
+§ 2.9 Passenger
+
+Represents a human in public transportaion system.
+
+§ 2.9.1 FirstName and surname
+
+Data type string. 
+
+Represent first name and surname of given person.
+
+§ 2.9.2 Relationship from Passenger to Ticket
+
+"Passenger owns a ticket."
+
+Represents tickets that a passenger owns. A passenger can own zero to many tickets. One ticket
+belongs to one passenger.
+
+
+
+	

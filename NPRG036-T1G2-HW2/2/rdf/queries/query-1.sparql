@@ -1,0 +1,27 @@
+# Select all stations of tram traffic line with id 22.
+# Return station IRIs, names and their corresponding latitude and longitude.
+# Sort stations in the same order as trams visit them.
+
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX ex: <https://example.org/vocabulary/>
+PREFIX extrfcln: <https://example.org/resource/trafficline/>
+PREFIX extype: <https://example.org/resource/transporttypes/>
+
+SELECT ?stationName ?latitude ?longitude
+WHERE {
+    ?trafficLine a ex:TrafficLine ;
+        ex:trafficLineId ?trafficLineId ;
+        ex:trafficLineHasType extype:tram ;
+        ex:contains ?trafficLineStation .
+
+    ?trafficLineStation ex:order ?stationOrder ;
+        ex:trafficLineStationHasStation ?station .
+
+    ?station ex:stationName ?stationName ;
+        geo:lat ?latitude ;
+        geo:long ?longitude .
+
+    FILTER(?trafficLineId=22)
+    FILTER(LANG(?stationName)="cs")
+}
+ORDER BY ?stationOrder

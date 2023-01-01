@@ -1,0 +1,33 @@
+# List all departures for funicular line Újezd-Nebozízek-Petřín
+# starting from 4 PM on business days.
+
+PREFIX ex: <https://example.org/vocabulary/>
+PREFIX extype: <https://example.org/resource/transporttypes/>
+
+SELECT ?departureTime
+WHERE {
+  	?trafficLine a ex:TrafficLine ;
+  		ex:trafficLineHasType extype:funicular ;
+		ex:contains ?startTrafficLineStation ;
+  		ex:contains ?middleTrafficLineStation ;
+ 		ex:contains ?destTrafficLineStation .
+
+  	?startTrafficLineStation  ex:order 1 ;
+  		ex:trafficLineStationHasStation ?startStation .
+    ?startStation ex:stationName "Újezd"@cs .
+
+  	?middleTrafficLineStation  ex:order 2 ;
+  		ex:trafficLineStationHasStation ?middleStation .
+    ?middleStation ex:stationName "Nebozízek"@cs .
+
+  	?destTrafficLineStation ex:order 3 ;
+        ex:trafficLineStationHasStation ?destStation .
+    ?destStation ex:stationName "Petřín"@cs .
+
+    ?trafficLine ex:follows ?departures .
+  	?departures ex:businessDay ?departureTime .
+
+  	FILTER(?departureHours >= "16")
+ 	BIND(REPLACE(STR(?departureTime), ":.+$", "") as ?departureHours)
+}
+ORDER BY ?departureTime

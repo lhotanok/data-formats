@@ -1,0 +1,3 @@
+(: How many passengers own at least 1 destination ticket? :)
+
+for $passenger in //Passengers return count($passenger //Passenger/destinationTickets)

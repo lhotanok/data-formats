@@ -1,0 +1,7 @@
+type,transportTypeName
+bus,Bus
+tram,Tram
+metro,Metro
+ferry,Ferry
+train,Train
+funicular,Funicular

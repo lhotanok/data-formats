@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:import namespace="http://www.w3.org/XML/1998/namespace"
+schemaLocation="https://www.w3.org/2009/01/xml.xsd" />
+    <!--Ticket definition-->
+    <xs:complexType name="Ticket">
+        <xs:sequence>
+            <xs:element name="ticketId" type="xs:int" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="validFrom" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="validTo" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!--DestinationTicket definition-->
+    <xs:complexType name="TimeTicket">
+        <xs:complexContent>
+            <xs:extension base="Ticket" />
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="DestinationTicket">
+        <xs:complexContent>
+            <xs:extension base="Ticket">
+                <xs:sequence>
+                    <xs:element name="fromStationId" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+                    <xs:element name="toStationId" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- List of tckets that passenger owns-->
+    <xs:complexType name="TimeTickets">
+        <xs:sequence>
+            <xs:element name="TimeTicket" type="TimeTicket" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DestinationTickets">
+        <xs:sequence>
+            <xs:element name="DestinationTicket" type="DestinationTicket" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!--Passenger definition-->
+    <xs:complexType name="Passenger">
+        <xs:sequence>
+            <xs:element name="firstName" type="xs:string"/>
+            <xs:element name="surname" type="xs:string"/>
+            <xs:element name="owns" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="timeTickets" type="TimeTickets" minOccurs="0" maxOccurs="1"/>
+                        <xs:element name="destinationTickets" type="DestinationTickets" minOccurs="0" maxOccurs="1"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute ref="xml:lang"/>
+    </xs:complexType>
+    <!-- ROOT-->
+    <xs:element name="Passengers">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Passenger" type="Passenger" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

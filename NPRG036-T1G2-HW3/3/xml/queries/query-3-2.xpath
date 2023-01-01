@@ -1,0 +1,7 @@
+(: Duration in minutes from the first to the second station of traffic line with id 2? :)
+
+/TrafficLines/TrafficLine
+[some $id in trafficLineId satisfies $id= "2"]
+/contains/TrafficLineStation
+[some $order in order satisfies $order= "1"]
+/minutesToNext

@@ -1,0 +1,66 @@
+
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/vocabulary/> .
+@prefix expas: <https://example.org/resource/passengers/> .
+@prefix exstation: <https://example.org/resource/stations/> .
+@prefix extick: <https://example.org/resource/tickets/> .
+
+expas:expas0001 a ex:Passenger ;
+    foaf:givenName "Milan"@cs ;
+    foaf:familyName "Hrušovský"@cs .
+
+expas:expas0001 ex:owns extick:ticket0001 .
+extick:ticket0001 a ex:DestinationTicket ;
+    ex:ticketId 1 ;
+    ex:validFrom "2023-04-17T17:00:00"^^xsd:dateTime ;
+    ex:validTo "2023-04-17T23:59:59"^^xsd:dateTime ;
+    ex:from exstation:station0100 ;
+    ex:to exstation:station0103 .
+
+expas:expas0002 a ex:Passenger ;
+    foaf:givenName "Frodo"@en ;
+    foaf:familyName "Bublik"@en .
+
+expas:expas0002 ex:owns extick:ticket0002 .
+extick:ticket0002 a ex:TimeTicket ;
+    ex:ticketId 2 ;
+    ex:validFrom "2023-01-25T17:00:00"^^xsd:dateTime ;
+    ex:validTo "2023-01-25T20:00:00"^^xsd:dateTime .
+
+expas:expas0003 a ex:Passenger ;
+    foaf:givenName "Darth"@en ;
+    foaf:familyName "Vader"@en .
+
+expas:expas0003 ex:owns extick:ticket0003 .
+extick:ticket0003 a ex:TimeTicket ;
+    ex:ticketId 3 ;
+    ex:validFrom "2022-12-04T23:30:00"^^xsd:dateTime ;
+    ex:validTo "2022-12-05T00:30:00"^^xsd:dateTime .
+
+expas:expas0003 ex:owns extick:ticket0005 .
+extick:ticket0005 a ex:DestinationTicket ;
+    ex:ticketId 5 ;
+    ex:validFrom "2023-04-20T09:00:00"^^xsd:dateTime ;
+    ex:validTo "2023-04-20T20:00:00"^^xsd:dateTime ;
+    ex:from exstation:station0100 ;
+    ex:to exstation:station0103 .
+
+expas:expas0004 a ex:Passenger ;
+    foaf:givenName "Luke"@en ;
+    foaf:familyName "Skywalker"@en .
+
+expas:expas0004 ex:owns extick:ticket0004 .
+extick:ticket0004 a ex:TimeTicket ;
+    ex:ticketId 4 ;
+    ex:validFrom "2022-12-24T17:00:00"^^xsd:dateTime ;
+    ex:validTo "2022-12-24T18:00:00"^^xsd:dateTime .
+
+expas:expas0004 ex:owns extick:ticket0006 .
+extick:ticket0006 a ex:DestinationTicket ;
+    ex:ticketId 6 ;
+    ex:validFrom "2023-04-17T12:00:00"^^xsd:dateTime ;
+    ex:validTo "2023-04-17T22:00:00"^^xsd:dateTime ;
+    ex:from exstation:station0104 ;
+    ex:to exstation:station0103 .
+
