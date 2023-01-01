@@ -156,23 +156,25 @@ exdep:depforline000 a 1,
 
 expas:expas0001 a ex:Passenger;
   foaf:familyName "Bublik"@en;
-  foaf:givenName "Frodo"@en .
+  foaf:givenName "Frodo"@en;
+  ex:owns 1 .
 
 expas:expas0002 a ex:Passenger;
   foaf:familyName "Skywalker"@en;
-  foaf:givenName "Luke"@en .
+  foaf:givenName "Luke"@en;
+  ex:owns 2 .
 
 expas:expas0003 a ex:Passenger;
   foaf:familyName "Vader"@en;
-  foaf:givenName "Darth"@en .
+  foaf:givenName "Darth"@en;
+  ex:owns 3,
+    5 .
 
 expas:expas0004 a ex:Passenger;
   foaf:familyName "Hrušovský"@en;
-  foaf:givenName "Milan"@en .
-
-expas:expas0005 a ex:Passenger .
-
-expas:expas0006 a ex:Passenger .
+  foaf:givenName "Milan"@en;
+  ex:owns 4,
+    6 .
 
 extick:station0001 a ex:Station;
   ex:latitude "50.090168"^^xsd:float;
@@ -424,19 +426,19 @@ extick:ticket0006 a ex:Ticket;
   ex:validFrom "2023-04-17T12:00:00"^^xsd:dateTime;
   ex:validTo "2023-04-17T22:00:00"^^xsd:dateTime .
 
-extrfcln:trafficline0001 <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-5.csv#id> 1;
+extrfcln:trafficline0001 <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-5.csv#id> 1;
   ex:trafficLineId 22 .
 
-extrfcln:trafficline0002 <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-5.csv#id> 2;
+extrfcln:trafficline0002 <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-5.csv#id> 2;
   ex:trafficLineId 15 .
 
-extrfcln:trafficline0003 <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-5.csv#id> 3;
+extrfcln:trafficline0003 <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-5.csv#id> 3;
   ex:trafficLineId 283 .
 
-extrfcln:trafficline0004 <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-5.csv#id> 4;
+extrfcln:trafficline0004 <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-5.csv#id> 4;
   ex:trafficLineId 80 .
 
-extrfcln:trafficline0005 <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-5.csv#id> 5;
+extrfcln:trafficline0005 <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-5.csv#id> 5;
   ex:trafficLineId 81 .
 
 extrfclnstn:trafficlinestation__0001 a ex:TrafficLineStation;
@@ -604,47 +606,47 @@ extrfclnstn:trafficlinestation__0009 a ex:TrafficLineStation;
   ex:order 9 .
 
 extype:bus a extype:TransportType;
-  <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-7.csv#type> "bus";
-  <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-8.csv#transportType> "bus";
+  <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-7.csv#type> "bus";
+  <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-8.csv#transportType> "bus";
   ex:transportTypeName "Bus"@en .
 
 extype:ferry a extype:TransportType;
-  <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-7.csv#type> "ferry";
+  <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-7.csv#type> "ferry";
   ex:transportTypeName "Ferry"@en .
 
 extype:funicular a extype:TransportType;
-  <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-7.csv#type> "funicular";
-  <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-8.csv#transportType> "funicular";
-  <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-9.csv#transportType> "funicular";
+  <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-7.csv#type> "funicular";
+  <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-8.csv#transportType> "funicular";
+  <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-9.csv#transportType> "funicular";
   ex:transportTypeName "Funicular"@en .
 
 extype:metro a extype:TransportType;
-  <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-7.csv#type> "metro";
+  <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-7.csv#type> "metro";
   ex:transportTypeName "Metro"@en .
 
 extype:train a extype:TransportType;
-  <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-7.csv#type> "train";
-  <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-8.csv#transportType> "train";
-  <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-9.csv#transportType> "train";
+  <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-7.csv#type> "train";
+  <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-8.csv#transportType> "train";
+  <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-9.csv#transportType> "train";
   ex:transportTypeName "Train"@en .
 
 extype:tram a extype:TransportType;
-  <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-7.csv#type> "tram";
-  <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-8.csv#transportType> "tram";
-  <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-9.csv#transportType> "tram";
+  <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-7.csv#type> "tram";
+  <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-8.csv#transportType> "tram";
+  <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-9.csv#transportType> "tram";
   ex:transportTypeName "Tram"@en .
 
  [
-    <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-1.csv#fromStationId> 100;
-    <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-1.csv#toStationId> 103
+    <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-1.csv#fromStationId> 100;
+    <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-1.csv#toStationId> 103
   ] .
 
  [
-    <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-1.csv#fromStationId> 100;
-    <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-1.csv#toStationId> 103
+    <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-1.csv#fromStationId> 100;
+    <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-1.csv#toStationId> 103
   ] .
 
  [
-    <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-1.csv#fromStationId> 104;
-    <file:C:/Users/mbohi/Desktop/NPRG036-T1G2-HW4/4/csv/data-1.csv#toStationId> 103
+    <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-1.csv#fromStationId> 104;
+    <file:D:/Downloads/data-formats/NPRG036-T1G2-HW4/4/csv/data-1.csv#toStationId> 103
   ] .

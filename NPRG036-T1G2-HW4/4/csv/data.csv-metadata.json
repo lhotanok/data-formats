@@ -25,17 +25,6 @@
           },
           {
             "@type":"Column",
-            "name":"passengerId",
-            "titles":"passengerId",
-            "dc:description":"ID of the passenger",
-            "required":true,
-            "datatype":"integer",
-            "aboutUrl":"https://example.org/resource/passengers/expas000{passengerId}",
-            "propertyUrl":"rdf:type",
-            "valueUrl":"https://example.org/vocabulary/Passenger"
-          },
-          {
-            "@type":"Column",
             "name":"validFrom",
             "titles":"validFrom",
             "dc:description":"Start of the time interval, in which the ticket is valid",
@@ -82,16 +71,7 @@
             "virtual":true
           }
         ],
-        "primaryKey":"ticketId",
-        "foreignKeys":[
-          {
-            "columnReference":"passengerId",
-            "reference":{
-              "resource":"data-2.csv",
-              "columnReference":"passengerId"
-            }
-          }
-        ]
+        "primaryKey":"ticketId"
       }
     },
     {
@@ -202,7 +182,8 @@
             "dc:description":"ID for the passenger",
             "required":true,
             "suppressOutput":true,
-            "datatype":"integer"
+            "datatype":"integer",
+            "aboutUrl":"https://example.org/resource/passengers/expas000{passengerId}"
           },
           {
             "@type":"Column",
@@ -211,7 +192,8 @@
             "dc:description":"ID for the ticket",
             "required":true,
             "datatype":"integer",
-            "suppressOutput":true
+            "aboutUrl":"https://example.org/resource/passengers/expas000{passengerId}",
+            "propertyUrl":"https://example.org/vocabulary/owns"
           }
         ],
         "foreignKeys":[
