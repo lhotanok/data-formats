@@ -54,14 +54,20 @@
             "name":"fromStationId",
             "titles":"fromStationId",
             "dc:description":"Id of the start station",
-            "datatype":"integer"
+            "datatype":"integer",
+            "aboutUrl":"https://example.org/resource/tickets/ticket000{ticketId}",
+            "propertyUrl":"https://example.org/vocabulary/from",
+            "valueUrl": "https://example.org/resource/stations/station000{fromStationId}"
           },
           {
             "@type":"Column",
             "name":"toStationId",
             "titles":"toStationId",
             "dc:description":"Id of the destination station",
-            "datatype":"integer"
+            "datatype":"integer",
+            "aboutUrl":"https://example.org/resource/tickets/ticket000{ticketId}",
+            "propertyUrl":"https://example.org/vocabulary/to",
+            "valueUrl": "https://example.org/resource/stations/station000{toStationId}"
           },
           {
             "@type":"Column",
@@ -130,7 +136,7 @@
             "dc:description":"ID for the station",
             "required":true,
             "datatype":"integer",
-            "aboutUrl":"https://example.org/resource/tickets/station000{stationId}",
+            "aboutUrl":"https://example.org/resource/stations/station000{stationId}",
             "propertyUrl":"rdf:type",
             "valueUrl":"https://example.org/vocabulary/Station"
           },
@@ -142,7 +148,7 @@
             "required":true,
             "datatype":"string",
             "lang":"cs",
-            "aboutUrl":"https://example.org/resource/tickets/station000{stationId}",
+            "aboutUrl":"https://example.org/resource/stations/station000{stationId}",
             "propertyUrl":"https://example.org/vocabulary/stationName"
           },
           {
@@ -191,9 +197,9 @@
             "titles":"ticketId",
             "dc:description":"ID for the ticket",
             "required":true,
-            "datatype":"integer",
             "aboutUrl":"https://example.org/resource/passengers/expas000{passengerId}",
-            "propertyUrl":"https://example.org/vocabulary/owns"
+            "propertyUrl":"https://example.org/vocabulary/owns",
+            "valueUrl": "https://example.org/resource/tickets/ticket000{ticketId}"
           }
         ],
         "foreignKeys":[
@@ -340,7 +346,9 @@
             "required":true,
             "datatype":"string",
             "dc:description":"Transport type identifier",
-            "aboutUrl":"https://example.org/resource/transporttypes/{type}"
+            "aboutUrl":"https://example.org/resource/transporttypes/{type}",
+            "propertyUrl":"rdf:type",
+            "valueUrl":"https://example.org/resource/transporttypes/TransportType"
           },
           {
             "@type":"Column",
@@ -352,13 +360,6 @@
             "dc:description":"Transport type name",
             "aboutUrl":"https://example.org/resource/transporttypes/{type}",
             "propertyUrl":"https://example.org/vocabulary/transportTypeName"
-          },
-          {
-            "@type":"Column",
-            "virtual":true,
-            "aboutUrl":"https://example.org/resource/transporttypes/{type}",
-            "propertyUrl":"rdf:type",
-            "valueUrl":"https://example.org/resource/transporttypes/TransportType"
           }
         ],
         "primaryKey":"type"
@@ -377,7 +378,6 @@
             "dc:description":"ID for the station",
             "required":true,
             "suppressOutput":true,
-            "datatype":"integer",
             "aboutUrl":"https://example.org/resource/tickets/station000{stationId}"
           },
           {
@@ -385,9 +385,10 @@
             "name":"transportType",
             "titles":"transportType",
             "required":true,
-            "datatype":"string",
             "dc:description":"ID of Transport Type",
-            "aboutUrl":"https://example.org/resource/transporttypes/{transportType}"
+            "aboutUrl":"https://example.org/resource/tickets/station000{stationId}",
+            "propertyUrl":"https://example.org/vocabulary/stationHasType",
+            "valueUrl": "https://example.org/resource/transporttypes/{transportType}"
           }
         ],
         "foreignKeys":[
@@ -422,7 +423,7 @@
             "required":true,
             "suppressOutput":true,
             "datatype":"integer",
-            "aboutUrl":"https://example.org/resource/trafficline/trafficline000{id}"
+            "aboutUrl":"https://example.org/resource/trafficline/trafficline000{traffId}"
           },
           {
             "@type":"Column",
@@ -431,7 +432,9 @@
             "required":true,
             "datatype":"string",
             "dc:description":"ID of Transport Type",
-            "aboutUrl":"https://example.org/resource/transporttypes/{transportType}"
+            "aboutUrl":"https://example.org/resource/trafficline/trafficline000{traffId}",
+            "valueUrl":"https://example.org/resource/transporttypes/{transportType}",
+            "propertyUrl": "https://example.org/vocabulary/trafficLineHasType"
           }
         ],
         "foreignKeys":[
