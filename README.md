@@ -1,4 +1,4 @@
-# Homework assignments for MFF UK course NPRG036 - Data Formats
+# Public Transport Data Formats
 
 ## Installation
 
