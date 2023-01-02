@@ -348,7 +348,7 @@
             "dc:description":"Transport type identifier",
             "aboutUrl":"https://example.org/resource/transporttypes/{type}",
             "propertyUrl":"rdf:type",
-            "valueUrl":"https://example.org/resource/transporttypes/TransportType"
+            "valueUrl":"https://example.org/vocabulary/TransportType"
           },
           {
             "@type":"Column",
@@ -468,18 +468,18 @@
             "required":true,
             "datatype":"integer",
             "dc:description":"",
-            "aboutUrl":"https://example.org/resource/departures/depforline000{number}",
-            "propertyUrl":"rdf:type"
+            "aboutUrl":"https://example.org/resource/departures/depforline{departuresIriId}",
+            "propertyUrl":"rdf:type",
+            "valueUrl":"https://example.org/vocabulary/Departures"
           },
           {
             "@type":"Column",
-            "name":"trafficLineId",
-            "titles":"trafficLineId",
+            "name":"departuresIriId",
+            "titles":"departuresIriId",
             "required":true,
-            "datatype":"integer",
+            "datatype":"string",
             "dc:description":"",
-            "aboutUrl":"https://example.org/resource/departures/depforline000{number}",
-            "propertyUrl":"rdf:type"
+            "suppressOutput": true
           },
           {
             "@type":"Column",
@@ -491,7 +491,7 @@
               "format":"HH:mm:ss"
             },
             "dc:description":"",
-            "aboutUrl":"https://example.org/resource/departures/depforline000{number}",
+            "aboutUrl":"https://example.org/resource/departures/depforline{departuresIriId}",
             "propertyUrl":"https://example.org/vocabulary/businessDay"
           },
           {
@@ -504,7 +504,7 @@
               "format":"HH:mm:ss"
             },
             "dc:description":"",
-            "aboutUrl":"https://example.org/resource/departures/depforline000{number}",
+            "aboutUrl":"https://example.org/resource/departures/depforline{departuresIriId}",
             "propertyUrl":"https://example.org/vocabulary/saturday"
           },
           {
@@ -517,7 +517,7 @@
               "format":"HH:mm:ss"
             },
             "dc:description":"",
-            "aboutUrl":"https://example.org/resource/departures/depforline000{number}",
+            "aboutUrl":"https://example.org/resource/departures/depforline{departuresIriId}",
             "propertyUrl":"https://example.org/vocabulary/sunday"
           },
           {
@@ -530,20 +530,11 @@
               "format":"yyyy-MM-dd"
             },
             "dc:description":"",
-            "aboutUrl":"https://example.org/resource/departures/depforline000{number}",
+            "aboutUrl":"https://example.org/resource/departures/depforline{departuresIriId}",
             "propertyUrl":"https://example.org/vocabulary/holidays"
           }
         ],
-        "primaryKey":"departuresId",
-        "foreignKeys":[
-          {
-            "columnReference":"trafficLineId",
-            "reference":{
-              "resource":"data-5.csv",
-              "columnReference":"trafficLineId"
-            }
-          }
-        ]
+        "primaryKey":"departuresId"
       }
     }
   ]
