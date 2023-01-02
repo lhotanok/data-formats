@@ -302,8 +302,9 @@
             "titles":"stationId",
             "dc:description":"ID of the physical station represented by this traffic line station",
             "required":true,
-            "suppressOutput":true,
-            "datatype":"integer"
+            "aboutUrl":"https://example.org/resource/trafficlinestation/trafficlinestation_{trafficLineId}_{idLeadingZeros}{order}",
+            "propertyUrl": "https://example.org/vocabulary/trafficLineStationHasStation",
+            "valueUrl": "https://example.org/resource/stations/station000{stationId}"
           },
           {
             "@type":"Column",

@@ -36,9 +36,6 @@ expas:expas0004 a ex:Passenger;
 exstation:station0001 a ex:Station;
   ex:stationName "Bílá Labuť"@cs .
 
-exstation:station00010 a ex:Station;
-  ex:stationName "Hellichova"@cs .
-
 exstation:station000101 a ex:Station;
   ex:stationName "Kolín"@cs .
 
@@ -60,74 +57,14 @@ exstation:station000108 a ex:Station;
 exstation:station000109 a ex:Station;
   ex:stationName "Šaľa"@cs .
 
-exstation:station00011 a ex:Station;
-  ex:stationName "Malostranské Náměstí"@cs .
-
 exstation:station000110 a ex:Station;
   ex:stationName "Nové zámky"@cs .
-
-exstation:station00012 a ex:Station;
-  ex:stationName "Malostranská"@cs .
-
-exstation:station00013 a ex:Station;
-  ex:stationName "Královský Letohrádek"@cs .
-
-exstation:station00014 a ex:Station;
-  ex:stationName "Pražský Hrad"@cs .
-
-exstation:station00015 a ex:Station;
-  ex:stationName "Brusnice"@cs .
-
-exstation:station00016 a ex:Station;
-  ex:stationName "Pohořelec"@cs .
-
-exstation:station00017 a ex:Station;
-  ex:stationName "Malovanka"@cs .
-
-exstation:station00018 a ex:Station;
-  ex:stationName "Marjánka"@cs .
-
-exstation:station00019 a ex:Station;
-  ex:stationName "Drinopol"@cs .
 
 exstation:station0002 a ex:Station;
   ex:stationName "Masarykovo Nádraží"@cs .
 
-exstation:station00020 a ex:Station;
-  ex:stationName "U Kaštanu"@cs .
-
-exstation:station00021 a ex:Station;
-  ex:stationName "Břevnovský Klášter"@cs .
-
-exstation:station00022 a ex:Station;
-  ex:stationName "Říčanova"@cs .
-
-exstation:station00023 a ex:Station;
-  ex:stationName "Vypich"@cs .
-
-exstation:station00024 a ex:Station;
-  ex:stationName "Obora Hvězda"@cs .
-
-exstation:station00025 a ex:Station;
-  ex:stationName "Malý Břevnov"@cs .
-
-exstation:station00026 a ex:Station;
-  ex:stationName "Bílá Hora"@cs .
-
-exstation:station00027 a ex:Station;
-  ex:stationName "Anděl"@cs .
-
-exstation:station00028 a ex:Station;
-  ex:stationName "Arbesovo náměstí"@cs .
-
-exstation:station00029 a ex:Station;
-  ex:stationName "Švandovo divadlo"@cs .
-
 exstation:station0003 a ex:Station;
   ex:stationName "Jindřišská"@cs .
-
-exstation:station00030 a ex:Station;
-  ex:stationName "Čechův most"@cs .
 
 exstation:station0004 a ex:Station;
   ex:stationName "Václavské náměstí"@cs .
@@ -143,18 +80,6 @@ exstation:station0007 a ex:Station;
 
 exstation:station0008 a ex:Station;
   ex:stationName "Národní Divadlo"@cs .
-
-exstation:station00080 a ex:Station;
-  ex:stationName "Petřín"@cs .
-
-exstation:station00081 a ex:Station;
-  ex:stationName "Nebozízek"@cs .
-
-exstation:station00082 a ex:Station;
-  ex:stationName "Újezd"@cs .
-
-exstation:station0009 a ex:Station;
-  ex:stationName "Újezd"@cs .
 
 extick:station0001 geo:lat 5.0090168e1;
   geo:long 1.443547e1;
@@ -364,135 +289,168 @@ extrfcln:trafficline0005 a ex:TrafficLine;
 
 extrfclnstn:trafficlinestation_15_0001 a ex:TrafficLineStation;
   ex:minutesToNext 3;
-  ex:order 1 .
+  ex:order 1;
+  ex:trafficLineStationHasStation exstation:station00027 .
 
 extrfclnstn:trafficlinestation_15_0002 a ex:TrafficLineStation;
   ex:minutesToNext 2;
-  ex:order 2 .
+  ex:order 2;
+  ex:trafficLineStationHasStation exstation:station00028 .
 
 extrfclnstn:trafficlinestation_15_0003 a ex:TrafficLineStation;
   ex:minutesToNext 4;
-  ex:order 3 .
+  ex:order 3;
+  ex:trafficLineStationHasStation exstation:station00028 .
 
 extrfclnstn:trafficlinestation_15_0004 a ex:TrafficLineStation;
   ex:minutesToNext 1;
-  ex:order 4 .
+  ex:order 4;
+  ex:trafficLineStationHasStation exstation:station00029 .
 
 extrfclnstn:trafficlinestation_15_0005 a ex:TrafficLineStation;
   ex:minutesToNext 1;
-  ex:order 5 .
+  ex:order 5;
+  ex:trafficLineStationHasStation exstation:station0009 .
 
 extrfclnstn:trafficlinestation_15_0006 a ex:TrafficLineStation;
   ex:minutesToNext 3;
-  ex:order 6 .
+  ex:order 6;
+  ex:trafficLineStationHasStation exstation:station00010 .
 
 extrfclnstn:trafficlinestation_15_0007 a ex:TrafficLineStation;
   ex:minutesToNext 2;
-  ex:order 7 .
+  ex:order 7;
+  ex:trafficLineStationHasStation exstation:station00011 .
 
 extrfclnstn:trafficlinestation_15_0008 a ex:TrafficLineStation;
   ex:minutesToNext 4;
-  ex:order 8 .
+  ex:order 8;
+  ex:trafficLineStationHasStation exstation:station00012 .
 
 extrfclnstn:trafficlinestation_15_0009 a ex:TrafficLineStation;
   ex:minutesToNext 0;
-  ex:order 9 .
+  ex:order 9;
+  ex:trafficLineStationHasStation exstation:station00030 .
 
 extrfclnstn:trafficlinestation_22_0009 a ex:TrafficLineStation;
   ex:minutesToNext 1;
-  ex:order 9 .
+  ex:order 9;
+  ex:trafficLineStationHasStation exstation:station0009 .
 
 extrfclnstn:trafficlinestation_22_0010 a ex:TrafficLineStation;
   ex:minutesToNext 3;
-  ex:order 10 .
+  ex:order 10;
+  ex:trafficLineStationHasStation exstation:station00010 .
 
 extrfclnstn:trafficlinestation_22_0011 a ex:TrafficLineStation;
   ex:minutesToNext 2;
-  ex:order 11 .
+  ex:order 11;
+  ex:trafficLineStationHasStation exstation:station00011 .
 
 extrfclnstn:trafficlinestation_22_0012 a ex:TrafficLineStation;
   ex:minutesToNext 4;
-  ex:order 12 .
+  ex:order 12;
+  ex:trafficLineStationHasStation exstation:station00012 .
 
 extrfclnstn:trafficlinestation_22_0013 a ex:TrafficLineStation;
   ex:minutesToNext 3;
-  ex:order 13 .
+  ex:order 13;
+  ex:trafficLineStationHasStation exstation:station00013 .
 
 extrfclnstn:trafficlinestation_22_0014 a ex:TrafficLineStation;
   ex:minutesToNext 2;
-  ex:order 14 .
+  ex:order 14;
+  ex:trafficLineStationHasStation exstation:station00014 .
 
 extrfclnstn:trafficlinestation_22_0015 a ex:TrafficLineStation;
   ex:minutesToNext 1;
-  ex:order 15 .
+  ex:order 15;
+  ex:trafficLineStationHasStation exstation:station00015 .
 
 extrfclnstn:trafficlinestation_22_0016 a ex:TrafficLineStation;
   ex:minutesToNext 5;
-  ex:order 16 .
+  ex:order 16;
+  ex:trafficLineStationHasStation exstation:station00016 .
 
 extrfclnstn:trafficlinestation_22_0017 a ex:TrafficLineStation;
   ex:minutesToNext 3;
-  ex:order 17 .
+  ex:order 17;
+  ex:trafficLineStationHasStation exstation:station00017 .
 
 extrfclnstn:trafficlinestation_22_0018 a ex:TrafficLineStation;
   ex:minutesToNext 4;
-  ex:order 18 .
+  ex:order 18;
+  ex:trafficLineStationHasStation exstation:station00018 .
 
 extrfclnstn:trafficlinestation_22_0019 a ex:TrafficLineStation;
   ex:minutesToNext 1;
-  ex:order 19 .
+  ex:order 19;
+  ex:trafficLineStationHasStation exstation:station00019 .
 
 extrfclnstn:trafficlinestation_22_0020 a ex:TrafficLineStation;
   ex:minutesToNext 2;
-  ex:order 20 .
+  ex:order 20;
+  ex:trafficLineStationHasStation exstation:station00020 .
 
 extrfclnstn:trafficlinestation_22_0021 a ex:TrafficLineStation;
   ex:minutesToNext 3;
-  ex:order 21 .
+  ex:order 21;
+  ex:trafficLineStationHasStation exstation:station00021 .
 
 extrfclnstn:trafficlinestation_22_0022 a ex:TrafficLineStation;
   ex:minutesToNext 4;
-  ex:order 22 .
+  ex:order 22;
+  ex:trafficLineStationHasStation exstation:station00022 .
 
 extrfclnstn:trafficlinestation_22_0023 a ex:TrafficLineStation;
   ex:minutesToNext 5;
-  ex:order 23 .
+  ex:order 23;
+  ex:trafficLineStationHasStation exstation:station00023 .
 
 extrfclnstn:trafficlinestation_22_0024 a ex:TrafficLineStation;
   ex:minutesToNext 1;
-  ex:order 24 .
+  ex:order 24;
+  ex:trafficLineStationHasStation exstation:station00024 .
 
 extrfclnstn:trafficlinestation_22_0025 a ex:TrafficLineStation;
   ex:minutesToNext 2;
-  ex:order 25 .
+  ex:order 25;
+  ex:trafficLineStationHasStation exstation:station00025 .
 
 extrfclnstn:trafficlinestation_22_0026 a ex:TrafficLineStation;
   ex:minutesToNext 0;
-  ex:order 26 .
+  ex:order 26;
+  ex:trafficLineStationHasStation exstation:station00026 .
 
 extrfclnstn:trafficlinestation_80_0001 a ex:TrafficLineStation;
   ex:minutesToNext 1;
-  ex:order 1 .
+  ex:order 1;
+  ex:trafficLineStationHasStation exstation:station00080 .
 
 extrfclnstn:trafficlinestation_80_0002 a ex:TrafficLineStation;
   ex:minutesToNext 3;
-  ex:order 2 .
+  ex:order 2;
+  ex:trafficLineStationHasStation exstation:station00081 .
 
 extrfclnstn:trafficlinestation_80_0003 a ex:TrafficLineStation;
   ex:minutesToNext 0;
-  ex:order 3 .
+  ex:order 3;
+  ex:trafficLineStationHasStation exstation:station00082 .
 
 extrfclnstn:trafficlinestation_81_0001 a ex:TrafficLineStation;
   ex:minutesToNext 3;
-  ex:order 1 .
+  ex:order 1;
+  ex:trafficLineStationHasStation exstation:station00082 .
 
 extrfclnstn:trafficlinestation_81_0002 a ex:TrafficLineStation;
   ex:minutesToNext 1;
-  ex:order 2 .
+  ex:order 2;
+  ex:trafficLineStationHasStation exstation:station00081 .
 
 extrfclnstn:trafficlinestation_81_0003 a ex:TrafficLineStation;
   ex:minutesToNext 0;
-  ex:order 3 .
+  ex:order 3;
+  ex:trafficLineStationHasStation exstation:station00080 .
 
 extype:ferry a ex:TransportType;
   ex:transportTypeName "Ferry"@en .
@@ -588,6 +546,57 @@ exdep:depforline0003 a ex:Departures;
 exstation:station000104 a ex:Station;
   ex:stationName "Břeclav"@cs .
 
+exstation:station00013 a ex:Station;
+  ex:stationName "Královský Letohrádek"@cs .
+
+exstation:station00014 a ex:Station;
+  ex:stationName "Pražský Hrad"@cs .
+
+exstation:station00015 a ex:Station;
+  ex:stationName "Brusnice"@cs .
+
+exstation:station00016 a ex:Station;
+  ex:stationName "Pohořelec"@cs .
+
+exstation:station00017 a ex:Station;
+  ex:stationName "Malovanka"@cs .
+
+exstation:station00018 a ex:Station;
+  ex:stationName "Marjánka"@cs .
+
+exstation:station00019 a ex:Station;
+  ex:stationName "Drinopol"@cs .
+
+exstation:station00020 a ex:Station;
+  ex:stationName "U Kaštanu"@cs .
+
+exstation:station00021 a ex:Station;
+  ex:stationName "Břevnovský Klášter"@cs .
+
+exstation:station00022 a ex:Station;
+  ex:stationName "Říčanova"@cs .
+
+exstation:station00023 a ex:Station;
+  ex:stationName "Vypich"@cs .
+
+exstation:station00024 a ex:Station;
+  ex:stationName "Obora Hvězda"@cs .
+
+exstation:station00025 a ex:Station;
+  ex:stationName "Malý Břevnov"@cs .
+
+exstation:station00026 a ex:Station;
+  ex:stationName "Bílá Hora"@cs .
+
+exstation:station00027 a ex:Station;
+  ex:stationName "Anděl"@cs .
+
+exstation:station00029 a ex:Station;
+  ex:stationName "Švandovo divadlo"@cs .
+
+exstation:station00030 a ex:Station;
+  ex:stationName "Čechův most"@cs .
+
 extick:ticket0001 a ex:Ticket;
   ex:from exstation:station000100;
   ex:ticketId 1;
@@ -666,8 +675,32 @@ exdep:depforline00040005 a ex:Departures;
     "10:00:00"^^xsd:time,
     "11:00:00"^^xsd:time .
 
+exstation:station00010 a ex:Station;
+  ex:stationName "Hellichova"@cs .
+
 exstation:station000100 a ex:Station;
   ex:stationName "Praha hl.n."@cs .
+
+exstation:station00011 a ex:Station;
+  ex:stationName "Malostranské Náměstí"@cs .
+
+exstation:station00012 a ex:Station;
+  ex:stationName "Malostranská"@cs .
+
+exstation:station00028 a ex:Station;
+  ex:stationName "Arbesovo náměstí"@cs .
+
+exstation:station00080 a ex:Station;
+  ex:stationName "Petřín"@cs .
+
+exstation:station00081 a ex:Station;
+  ex:stationName "Nebozízek"@cs .
+
+exstation:station00082 a ex:Station;
+  ex:stationName "Újezd"@cs .
+
+exstation:station0009 a ex:Station;
+  ex:stationName "Újezd"@cs .
 
 exstation:station000103 a ex:Station;
   ex:stationName "Brno hl.n."@cs .
