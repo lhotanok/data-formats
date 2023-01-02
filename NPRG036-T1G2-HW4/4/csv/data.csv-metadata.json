@@ -246,9 +246,29 @@
             "datatype":"integer",
             "aboutUrl":"https://example.org/resource/trafficline/trafficline000{id}",
             "propertyUrl":"https://example.org/vocabulary/trafficLineId"
+          },
+          {
+            "@type":"Column",
+            "name":"departuresIriId",
+            "titles":"departuresIriId",
+            "dc:description":"ID of the corresponding departures",
+            "required":true,
+            "datatype":"string",
+            "aboutUrl":"https://example.org/resource/trafficline/trafficline000{id}",
+            "propertyUrl":"https://example.org/vocabulary/follows",
+            "valueUrl": "https://example.org/resource/departures/depforline{departuresIriId}"
           }
         ],
-        "primaryKey":"id"
+        "primaryKey":"id",
+        "foreignKeys":[
+          {
+            "columnReference":"departuresIriId",
+            "reference":{
+              "resource":"data-10.csv",
+              "columnReference":"departuresIriId"
+            }
+          }
+        ]
       }
     },
     {

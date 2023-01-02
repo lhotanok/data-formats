@@ -1,6 +1,6 @@
-id,trafficLineId
-1,22
-2,15
-3,283
-4,80
-5,81
+id,trafficLineId,departuresIriId
+1,22,0001
+2,15,0002
+3,283,0003
+4,80,00040005
+5,81,00040005
