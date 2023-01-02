@@ -7,6 +7,7 @@
 @prefix extrfclnstn: <https://example.org/resource/trafficlinestation/> .
 @prefix extype: <https://example.org/resource/transporttypes/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -300,185 +301,185 @@ exstation:station00082 a ex:Station;
 exstation:station0009 a ex:Station;
   ex:stationName "Újezd"@cs .
 
-extick:station0001 ex:latitude "50.090168"^^xsd:float;
-  ex:longitude "14.43547"^^xsd:float;
+extick:station0001 geo:lat 5.0090168e1;
+  geo:long 1.443547e1;
   ex:stationHasType extype:tram .
 
-extick:station00010 ex:latitude "50.085659"^^xsd:float;
-  ex:longitude "14.404176"^^xsd:float;
+extick:station00010 geo:lat 5.0085659e1;
+  geo:long 1.4404176e1;
   ex:stationHasType extype:tram .
 
-extick:station000100 ex:latitude "50.0832088"^^xsd:float;
-  ex:longitude "14.4353059"^^xsd:float;
+extick:station000100 geo:lat 5.00832088e1;
+  geo:long 1.44353059e1;
   ex:stationHasType extype:train .
 
-extick:station000101 ex:latitude "50.0251424"^^xsd:float;
-  ex:longitude "15.2135959"^^xsd:float;
+extick:station000101 geo:lat 5.00251424e1;
+  geo:long 1.52135959e1;
   ex:stationHasType extype:train .
 
-extick:station000102 ex:latitude "49.2306224"^^xsd:float;
-  ex:longitude "16.5961361"^^xsd:float;
+extick:station000102 geo:lat 4.92306224e1;
+  geo:long 1.65961361e1;
   ex:stationHasType extype:train .
 
-extick:station000103 ex:latitude "49.1908371"^^xsd:float;
-  ex:longitude "16.6126478"^^xsd:float;
+extick:station000103 geo:lat 4.91908371e1;
+  geo:long 1.66126478e1;
   ex:stationHasType extype:train .
 
-extick:station000104 ex:latitude "48.7536757"^^xsd:float;
-  ex:longitude "16.8924738"^^xsd:float;
+extick:station000104 geo:lat 4.87536757e1;
+  geo:long 1.68924738e1;
   ex:stationHasType extype:train .
 
-extick:station000105 ex:latitude "48.6621208"^^xsd:float;
-  ex:longitude "17.0471992"^^xsd:float;
+extick:station000105 geo:lat 4.86621208e1;
+  geo:long 1.70471992e1;
   ex:stationHasType extype:train .
 
-extick:station000106 ex:latitude "48.1586132"^^xsd:float;
-  ex:longitude "17.1060975"^^xsd:float;
+extick:station000106 geo:lat 4.81586132e1;
+  geo:long 1.71060975e1;
   ex:stationHasType extype:train .
 
-extick:station000107 ex:latitude "48.1868475"^^xsd:float;
-  ex:longitude "17.1338485"^^xsd:float;
+extick:station000107 geo:lat 4.81868475e1;
+  geo:long 1.71338485e1;
   ex:stationHasType extype:train .
 
-extick:station000108 ex:latitude "48.185312"^^xsd:float;
-  ex:longitude "17.7229379"^^xsd:float;
+extick:station000108 geo:lat 4.8185312e1;
+  geo:long 1.77229379e1;
   ex:stationHasType extype:train .
 
-extick:station000109 ex:latitude "48.1513924"^^xsd:float;
-  ex:longitude "17.8756083"^^xsd:float;
+extick:station000109 geo:lat 4.81513924e1;
+  geo:long 1.78756083e1;
   ex:stationHasType extype:train .
 
-extick:station00011 ex:latitude "50.08798"^^xsd:float;
-  ex:longitude "14.40433"^^xsd:float;
+extick:station00011 geo:lat 5.008798e1;
+  geo:long 1.440433e1;
   ex:stationHasType extype:tram,
     extype:bus .
 
-extick:station000110 ex:latitude "47.9945714"^^xsd:float;
-  ex:longitude "18.1740287"^^xsd:float;
+extick:station000110 geo:lat 4.79945714e1;
+  geo:long 1.81740287e1;
   ex:stationHasType extype:train .
 
-extick:station00012 ex:latitude "50.090363"^^xsd:float;
-  ex:longitude "14.410101"^^xsd:float;
+extick:station00012 geo:lat 5.0090363e1;
+  geo:long 1.4410101e1;
   ex:stationHasType extype:tram .
 
-extick:station00013 ex:latitude "50.094265"^^xsd:float;
-  ex:longitude "14.404549"^^xsd:float;
+extick:station00013 geo:lat 5.0094265e1;
+  geo:long 1.4404549e1;
   ex:stationHasType extype:tram .
 
-extick:station00014 ex:latitude "50.093323"^^xsd:float;
-  ex:longitude "14.398007"^^xsd:float;
+extick:station00014 geo:lat 5.0093323e1;
+  geo:long 1.4398007e1;
   ex:stationHasType extype:tram .
 
-extick:station00015 ex:latitude "50.093323"^^xsd:float;
-  ex:longitude "14.398007"^^xsd:float;
+extick:station00015 geo:lat 5.0093323e1;
+  geo:long 1.4398007e1;
   ex:stationHasType extype:tram .
 
-extick:station00016 ex:latitude "50.093323"^^xsd:float;
-  ex:longitude "14.398007"^^xsd:float;
+extick:station00016 geo:lat 5.0093323e1;
+  geo:long 1.4398007e1;
   ex:stationHasType extype:tram .
 
-extick:station00017 ex:latitude "50.093323"^^xsd:float;
-  ex:longitude "14.398007"^^xsd:float;
+extick:station00017 geo:lat 5.0093323e1;
+  geo:long 1.4398007e1;
   ex:stationHasType extype:tram,
     extype:bus .
 
-extick:station00018 ex:latitude "50.093323"^^xsd:float;
-  ex:longitude "14.398007"^^xsd:float;
+extick:station00018 geo:lat 5.0093323e1;
+  geo:long 1.4398007e1;
   ex:stationHasType extype:tram,
     extype:bus .
 
-extick:station00019 ex:latitude "50.093323"^^xsd:float;
-  ex:longitude "14.398007"^^xsd:float;
+extick:station00019 geo:lat 5.0093323e1;
+  geo:long 1.4398007e1;
   ex:stationHasType extype:tram .
 
-extick:station0002 ex:latitude "50.081158"^^xsd:float;
-  ex:longitude "14.4195921"^^xsd:float;
+extick:station0002 geo:lat 5.0081158e1;
+  geo:long 1.44195921e1;
   ex:stationHasType extype:tram,
     extype:bus .
 
-extick:station00020 ex:latitude "50.08363"^^xsd:float;
-  ex:longitude "14.36335"^^xsd:float;
+extick:station00020 geo:lat 5.008363e1;
+  geo:long 1.436335e1;
   ex:stationHasType extype:tram .
 
-extick:station00021 ex:latitude "50.093323"^^xsd:float;
-  ex:longitude "14.398007"^^xsd:float;
+extick:station00021 geo:lat 5.0093323e1;
+  geo:long 1.4398007e1;
   ex:stationHasType extype:tram .
 
-extick:station00022 ex:latitude "50.08133"^^xsd:float;
-  ex:longitude "14.35277"^^xsd:float;
+extick:station00022 geo:lat 5.008133e1;
+  geo:long 1.435277e1;
   ex:stationHasType extype:tram .
 
-extick:station00023 ex:latitude "50.0796863"^^xsd:float;
-  ex:longitude "14.3464722"^^xsd:float;
+extick:station00023 geo:lat 5.00796863e1;
+  geo:long 1.43464722e1;
   ex:stationHasType extype:tram,
     extype:bus .
 
-extick:station00024 ex:latitude "50.078121"^^xsd:float;
-  ex:longitude "14.340657"^^xsd:float;
+extick:station00024 geo:lat 5.0078121e1;
+  geo:long 1.4340657e1;
   ex:stationHasType extype:tram .
 
-extick:station00025 ex:latitude "50.076279"^^xsd:float;
-  ex:longitude "14.332569"^^xsd:float;
+extick:station00025 geo:lat 5.0076279e1;
+  geo:long 1.4332569e1;
   ex:stationHasType extype:tram .
 
-extick:station00026 ex:latitude "50.07555"^^xsd:float;
-  ex:longitude "14.32279"^^xsd:float;
+extick:station00026 geo:lat 5.007555e1;
+  geo:long 1.432279e1;
   ex:stationHasType extype:tram .
 
-extick:station00027 ex:latitude "50.07193"^^xsd:float;
-  ex:longitude "14.4036309"^^xsd:float;
+extick:station00027 geo:lat 5.007193e1;
+  geo:long 1.44036309e1;
   ex:stationHasType extype:tram .
 
-extick:station00028 ex:latitude "50.0762107"^^xsd:float;
-  ex:longitude "14.4041746"^^xsd:float;
+extick:station00028 geo:lat 5.00762107e1;
+  geo:long 1.44041746e1;
   ex:stationHasType extype:tram .
 
-extick:station00029 ex:latitude "50.0762107"^^xsd:float;
-  ex:longitude "14.4041746"^^xsd:float;
+extick:station00029 geo:lat 5.00762107e1;
+  geo:long 1.44041746e1;
   ex:stationHasType extype:tram .
 
-extick:station0003 ex:latitude "50.081158"^^xsd:float;
-  ex:longitude "14.4195921"^^xsd:float;
+extick:station0003 geo:lat 5.0081158e1;
+  geo:long 1.44195921e1;
   ex:stationHasType extype:tram .
 
-extick:station00030 ex:latitude "50.0940657"^^xsd:float;
-  ex:longitude "14.4167362"^^xsd:float;
+extick:station00030 geo:lat 5.00940657e1;
+  geo:long 1.44167362e1;
   ex:stationHasType extype:tram .
 
-extick:station0004 ex:latitude "50.081158"^^xsd:float;
-  ex:longitude "14.4195921"^^xsd:float;
+extick:station0004 geo:lat 5.0081158e1;
+  geo:long 1.44195921e1;
   ex:stationHasType extype:tram .
 
-extick:station0005 ex:latitude "50.081158"^^xsd:float;
-  ex:longitude "14.4195921"^^xsd:float;
+extick:station0005 geo:lat 5.0081158e1;
+  geo:long 1.44195921e1;
   ex:stationHasType extype:tram .
 
-extick:station0006 ex:latitude "50.081158"^^xsd:float;
-  ex:longitude "14.4195921"^^xsd:float;
+extick:station0006 geo:lat 5.0081158e1;
+  geo:long 1.44195921e1;
   ex:stationHasType extype:tram .
 
-extick:station0007 ex:latitude "50.081158"^^xsd:float;
-  ex:longitude "14.4195921"^^xsd:float;
+extick:station0007 geo:lat 5.0081158e1;
+  geo:long 1.44195921e1;
   ex:stationHasType extype:tram .
 
-extick:station0008 ex:latitude "50.0824531"^^xsd:float;
-  ex:longitude "14.4131844"^^xsd:float;
+extick:station0008 geo:lat 5.00824531e1;
+  geo:long 1.44131844e1;
   ex:stationHasType extype:tram .
 
-extick:station00080 ex:latitude "50.0819497"^^xsd:float;
-  ex:longitude "14.3966883"^^xsd:float;
+extick:station00080 geo:lat 5.00819497e1;
+  geo:long 1.43966883e1;
   ex:stationHasType extype:funicular .
 
-extick:station00081 ex:latitude "50.08226"^^xsd:float;
-  ex:longitude "14.39926"^^xsd:float;
+extick:station00081 geo:lat 5.008226e1;
+  geo:long 1.439926e1;
   ex:stationHasType extype:funicular .
 
-extick:station00082 ex:latitude "50.082649"^^xsd:float;
-  ex:longitude "14.403681"^^xsd:float;
+extick:station00082 geo:lat 5.0082649e1;
+  geo:long 1.4403681e1;
   ex:stationHasType extype:funicular .
 
-extick:station0009 ex:latitude "50.081676"^^xsd:float;
-  ex:longitude "14.404443"^^xsd:float;
+extick:station0009 geo:lat 5.0081676e1;
+  geo:long 1.4404443e1;
   ex:stationHasType extype:tram .
 
 extrfcln:trafficline0001 a ex:TrafficLine;

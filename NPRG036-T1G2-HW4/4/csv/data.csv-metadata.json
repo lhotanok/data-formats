@@ -157,9 +157,9 @@
             "titles":"latitude",
             "dc:description":"Latitude of the station",
             "required":true,
-            "datatype":"float",
+            "datatype":"double",
             "aboutUrl":"https://example.org/resource/tickets/station000{stationId}",
-            "propertyUrl":"https://example.org/vocabulary/latitude"
+            "propertyUrl":"http://www.w3.org/2003/01/geo/wgs84_pos#lat"
           },
           {
             "@type":"Column",
@@ -167,9 +167,9 @@
             "titles":"longitude",
             "dc:description":"Longitude of the station",
             "required":true,
-            "datatype":"float",
+            "datatype":"double",
             "aboutUrl":"https://example.org/resource/tickets/station000{stationId}",
-            "propertyUrl":"https://example.org/vocabulary/longitude"
+            "propertyUrl":"http://www.w3.org/2003/01/geo/wgs84_pos#long"
           }
         ],
         "primaryKey":"stationId"
