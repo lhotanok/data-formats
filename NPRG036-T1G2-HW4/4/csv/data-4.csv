@@ -1,7 +1,4 @@
-passengerId,ticketId
-1,1
+passengerId,timeTicketId
 2,2
 3,3
-3,5
 4,4
-4,6

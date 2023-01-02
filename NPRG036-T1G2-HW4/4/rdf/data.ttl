@@ -522,36 +522,36 @@ exstation:station0104 a ex:Station;
   ex:stationHasType extype:train;
   ex:stationName "Břeclav"@cs .
 
-extick:ticket0001 a ex:Ticket;
+extick:ticket0001 a ex:DestinationTicket;
   ex:from exstation:station0100;
   ex:ticketId 1;
   ex:to exstation:station0103;
   ex:validFrom "2023-04-17T17:00:00"^^xsd:dateTime;
   ex:validTo "2023-04-17T23:59:59"^^xsd:dateTime .
 
-extick:ticket0002 a ex:Ticket;
+extick:ticket0002 a ex:TimeTicket;
   ex:ticketId 2;
   ex:validFrom "2023-01-25T17:00:00"^^xsd:dateTime;
   ex:validTo "2023-01-25T20:00:00"^^xsd:dateTime .
 
-extick:ticket0003 a ex:Ticket;
+extick:ticket0003 a ex:TimeTicket;
   ex:ticketId 3;
   ex:validFrom "2022-12-04T23:30:00"^^xsd:dateTime;
   ex:validTo "2022-12-05T00:30:00"^^xsd:dateTime .
 
-extick:ticket0004 a ex:Ticket;
+extick:ticket0004 a ex:TimeTicket;
   ex:ticketId 4;
   ex:validFrom "2022-12-24T17:00:00"^^xsd:dateTime;
   ex:validTo "2022-12-24T18:00:00"^^xsd:dateTime .
 
-extick:ticket0005 a ex:Ticket;
+extick:ticket0005 a ex:DestinationTicket;
   ex:from exstation:station0100;
   ex:ticketId 5;
   ex:to exstation:station0103;
   ex:validFrom "2023-04-20T09:00:00"^^xsd:dateTime;
   ex:validTo "2023-04-20T20:00:00"^^xsd:dateTime .
 
-extick:ticket0006 a ex:Ticket;
+extick:ticket0006 a ex:DestinationTicket;
   ex:from exstation:station0104;
   ex:ticketId 6;
   ex:to exstation:station0103;

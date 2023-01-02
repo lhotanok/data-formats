@@ -15,12 +15,12 @@
         "columns":[
           {
             "@type":"Column",
-            "name":"ticketId",
-            "titles":"ticketId",
-            "dc:description":"ID of the ticket",
+            "name":"timeTicketId",
+            "titles":"timeTicketId",
+            "dc:description":"ID of the time ticket",
             "required":true,
             "datatype":"integer",
-            "aboutUrl":"https://example.org/resource/tickets/ticket000{ticketId}",
+            "aboutUrl":"https://example.org/resource/tickets/ticket000{timeTicketId}",
             "propertyUrl":"https://example.org/vocabulary/ticketId"
           },
           {
@@ -33,7 +33,7 @@
               "base":"dateTime",
               "format":"yyyy-MM-ddTHH:mm:ss"
             },
-            "aboutUrl":"https://example.org/resource/tickets/ticket000{ticketId}",
+            "aboutUrl":"https://example.org/resource/tickets/ticket000{timeTicketId}",
             "propertyUrl":"https://example.org/vocabulary/validFrom"
           },
           {
@@ -46,38 +46,18 @@
               "base":"dateTime",
               "format":"yyyy-MM-ddTHH:mm:ss"
             },
-            "aboutUrl":"https://example.org/resource/tickets/ticket000{ticketId}",
+            "aboutUrl":"https://example.org/resource/tickets/ticket000{timeTicketId}",
             "propertyUrl":"https://example.org/vocabulary/validTo"
           },
           {
             "@type":"Column",
-            "name":"fromStationId",
-            "titles":"fromStationId",
-            "dc:description":"Id of the start station",
-            "datatype":"string",
-            "aboutUrl":"https://example.org/resource/tickets/ticket000{ticketId}",
-            "propertyUrl":"https://example.org/vocabulary/from",
-            "valueUrl": "https://example.org/resource/stations/station{fromStationId}"
-          },
-          {
-            "@type":"Column",
-            "name":"toStationId",
-            "titles":"toStationId",
-            "dc:description":"Id of the destination station",
-            "datatype":"string",
-            "aboutUrl":"https://example.org/resource/tickets/ticket000{ticketId}",
-            "propertyUrl":"https://example.org/vocabulary/to",
-            "valueUrl": "https://example.org/resource/stations/station{toStationId}"
-          },
-          {
-            "@type":"Column",
-            "aboutUrl":"https://example.org/resource/tickets/ticket000{ticketId}",
+            "aboutUrl":"https://example.org/resource/tickets/ticket000{timeTicketId}",
             "propertyUrl":"rdf:type",
-            "valueUrl":"https://example.org/vocabulary/Ticket",
+            "valueUrl":"https://example.org/vocabulary/TimeTicket",
             "virtual":true
           }
         ],
-        "primaryKey":"ticketId"
+        "primaryKey":"timeTicketId"
       }
     },
     {
@@ -193,28 +173,28 @@
           },
           {
             "@type":"Column",
-            "name":"ticketId",
-            "titles":"ticketId",
-            "dc:description":"ID for the ticket",
+            "name":"timeTicketId",
+            "titles":"timeTicketId",
+            "dc:description":"ID for the time ticket",
             "required":true,
             "aboutUrl":"https://example.org/resource/passengers/expas000{passengerId}",
             "propertyUrl":"https://example.org/vocabulary/owns",
-            "valueUrl": "https://example.org/resource/tickets/ticket000{ticketId}"
+            "valueUrl": "https://example.org/resource/tickets/ticket000{timeTicketId}"
           }
         ],
         "foreignKeys":[
-          {
-            "columnReference":"ticketId",
-            "reference":{
-              "resource":"data-1.csv",
-              "columnReference":"ticketId"
-            }
-          },
           {
             "columnReference":"passengerId",
             "reference":{
               "resource":"data-2.csv",
               "columnReference":"passengerId"
+            }
+          },
+          {
+            "columnReference":"timeTicketId",
+            "reference":{
+              "resource":"data-1.csv",
+              "columnReference":"timeTicketId"
             }
           }
         ]
@@ -558,6 +538,124 @@
           }
         ],
         "primaryKey":"departuresId"
+      }
+    },
+    {
+      "@type":"Table",
+      "url":"data-11.csv",
+      "tableSchema":{
+        "@type":"Schema",
+        "columns":[
+          {
+            "@type":"Column",
+            "name":"destinationTicketId",
+            "titles":"destinationTicketId",
+            "dc:description":"ID of the destination ticket",
+            "required":true,
+            "datatype":"integer",
+            "aboutUrl":"https://example.org/resource/tickets/ticket000{destinationTicketId}",
+            "propertyUrl":"https://example.org/vocabulary/ticketId"
+          },
+          {
+            "@type":"Column",
+            "name":"validFrom",
+            "titles":"validFrom",
+            "dc:description":"Start of the time interval, in which the ticket is valid",
+            "required":true,
+            "datatype":{
+              "base":"dateTime",
+              "format":"yyyy-MM-ddTHH:mm:ss"
+            },
+            "aboutUrl":"https://example.org/resource/tickets/ticket000{destinationTicketId}",
+            "propertyUrl":"https://example.org/vocabulary/validFrom"
+          },
+          {
+            "@type":"Column",
+            "name":"validTo",
+            "titles":"validTo",
+            "dc:description":"End of the time interval, in which the ticket is valid",
+            "required":true,
+            "datatype":{
+              "base":"dateTime",
+              "format":"yyyy-MM-ddTHH:mm:ss"
+            },
+            "aboutUrl":"https://example.org/resource/tickets/ticket000{destinationTicketId}",
+            "propertyUrl":"https://example.org/vocabulary/validTo"
+          },
+          {
+            "@type":"Column",
+            "name":"fromStationId",
+            "titles":"fromStationId",
+            "dc:description":"Id of the start station",
+            "datatype":"string",
+            "aboutUrl":"https://example.org/resource/tickets/ticket000{destinationTicketId}",
+            "propertyUrl":"https://example.org/vocabulary/from",
+            "valueUrl": "https://example.org/resource/stations/station{fromStationId}"
+          },
+          {
+            "@type":"Column",
+            "name":"toStationId",
+            "titles":"toStationId",
+            "dc:description":"Id of the destination station",
+            "datatype":"string",
+            "aboutUrl":"https://example.org/resource/tickets/ticket000{destinationTicketId}",
+            "propertyUrl":"https://example.org/vocabulary/to",
+            "valueUrl": "https://example.org/resource/stations/station{toStationId}"
+          },
+          {
+            "@type":"Column",
+            "aboutUrl":"https://example.org/resource/tickets/ticket000{destinationTicketId}",
+            "propertyUrl":"rdf:type",
+            "valueUrl":"https://example.org/vocabulary/DestinationTicket",
+            "virtual":true
+          }
+        ],
+        "primaryKey":"destinationTicketId"
+      }
+    },
+    {
+      "@type":"Table",
+      "url":"data-12.csv",
+      "tableSchema":{
+        "@type":"Schema",
+        "columns":[
+          {
+            "@type":"Column",
+            "name":"passengerId",
+            "titles":"passengerId",
+            "dc:description":"ID for the passenger",
+            "required":true,
+            "suppressOutput":true,
+            "datatype":"integer",
+            "aboutUrl":"https://example.org/resource/passengers/expas000{passengerId}"
+          },
+          {
+            "@type":"Column",
+            "name":"destinationTicketId",
+            "titles":"destinationTicketId",
+            "dc:description":"ID of the destination ticket",
+            "required":true,
+            "aboutUrl":"https://example.org/resource/passengers/expas000{passengerId}",
+            "propertyUrl":"https://example.org/vocabulary/owns",
+            "valueUrl": "https://example.org/resource/tickets/ticket000{destinationTicketId}"
+          }
+        ],
+        "foreignKeys":[
+          {
+            "columnReference":"passengerId",
+            "reference":{
+              "resource":"data-2.csv",
+              "columnReference":"passengerId"
+            }
+          },
+          {
+            "columnReference":"destinationTicketId",
+            "reference":{
+              "resource":"data-11.csv",
+              "columnReference":"destinationTicketId"
+            }
+          }
+        ]
       }
     }
   ]
